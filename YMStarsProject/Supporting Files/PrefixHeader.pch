@@ -13,12 +13,17 @@
 #import "UtilsMacros.h"
 #import "Commonmacros.h"
 #import "FontAndColorMacros.h"
+#import "URLMacros.h"
+#import "ThirdMarcos.h"
 
 //基础类
 #import "AppDelegate.h"
 #import "AppDelegate+AppService.h"
 #import "CHRootViewController.h"
 #import "CHNavigationController.h"
+#import "MBProgressHUD+CH.h"
+#import "UserManager.h"
+#import "PPNetworkHelper.h"
 
 //第三方
 #import <MBProgressHUD.h>

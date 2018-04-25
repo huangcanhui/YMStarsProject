@@ -8,6 +8,7 @@
 
 #import "AppDelegate+AppService.h"
 #import "CHLoginViewController.h"
+#import <YTKNetwork.h>
 
 @implementation AppDelegate(AppService)
 
@@ -36,6 +37,24 @@
     [UIActivityIndicatorView appearanceWhenContainedIn:[MBProgressHUD class], nil].color = KWhiteColor;
     if (@available(iOS 11.0, *)) {
         [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+    }
+}
+
+#pragma mark - 初始化用户系统
+- (void)initUserManager
+{
+    if ([userManager loadUserInfo]) { //有缓存的用户数据
+        self.mainTabbar = [MainTabBarController new];
+        self.window.rootViewController = self.mainTabbar;
+        [userManager autoLoginToServer:^(BOOL success, NSString *des) {
+            if (success) {
+                KPostNotification(KNotificationAutoLoginSuccess, nil);
+            } else {
+                [MBProgressHUD showErrorMessage:NSStringFormat(@"登录失败:%@", des)];
+            }
+        }];
+    } else { //无缓存的用户数据
+        KPostNotification(KNotificationLoginStateChange, @NO);
     }
 }
 
@@ -73,13 +92,104 @@
 #pragma mark - 网络状态变化
 - (void)netWorkStateChange:(NSNotification *)notification
 {
-    
+    BOOL isNetWork = [notification.object boolValue];
+    if (isNetWork) { //有网络
+        if ([userManager loadUserInfo] && !isLogin) { //有用户数据并且未登陆成功
+            [userManager autoLoginToServer:^(BOOL success, NSString *des) {
+                if (success) {
+                    KPostNotification(KNotificationAutoLoginSuccess, nil);
+                } else {
+                    [MBProgressHUD showErrorMessage:NSStringFormat(@"登录失败:%@", des)];
+                }
+            }];
+        }
+    } else { //登录失败，加载登录页面
+        KPostNotification(KNotificationLoginStateChange, @NO);
+    }
 }
 
 #pragma mark - 网络状态监听
 - (void)monitorNetworkStatus
 {
+    //网络状态改变一次，networkstatusWithBlock就会响应一次
+    [PPNetworkHelper networkStatusWithBlock:^(PPNetworkStatusType status) {
+        switch (status) {
+            case PPNetworkStatusUnknown: //未知网络
+                DLog(@"网络环境：未知网络");
+                break;
+            case PPNetworkStatusNotReachable: //无网络
+                DLog(@"网络环境:无网络");
+                KPostNotification(KNotificationNetWorkStateChange, @NO);
+                break;
+            case PPNetworkStatusReachableViaWWAN: //手机网络
+                DLog(@"网络环境:手机自带网络");
+                break;
+            case PPNetworkStatusReachableViaWiFi: //WiFi
+                DLog(@"网络环境:WiFi");
+                KPostNotification(KNotificationNetWorkStateChange, @YES);
+                break;
+            default:
+                break;
+        }
+    }];
+}
+
+#pragma mark - 初始化网络配置
+- (void)NetWorkConfig
+{
+    YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
+    config.baseUrl = URL_main;
+}
+
+- (UIViewController *)getCurrentVC
+{
+    UIViewController *result = nil;
     
+    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+    if (window.windowLevel != UIWindowLevelNormal)
+    {
+        NSArray *windows = [[UIApplication sharedApplication] windows];
+        for(UIWindow * tmpWin in windows)
+        {
+            if (tmpWin.windowLevel == UIWindowLevelNormal)
+            {
+                window = tmpWin;
+                break;
+            }
+        }
+    }
+    
+    UIView *frontView = [[window subviews] objectAtIndex:0];
+    id nextResponder = [frontView nextResponder];
+    
+    if ([nextResponder isKindOfClass:[UIViewController class]])
+    {
+        result = nextResponder;
+    } else {
+        result = window.rootViewController;
+    }
+    return result;
+}
+
+-(UIViewController *)getCurrentUIVC
+{
+    UIViewController  *superVC = [self getCurrentVC];
+    
+    if ([superVC isKindOfClass:[UITabBarController class]]) {
+        
+        UIViewController  *tabSelectVC = ((UITabBarController*)superVC).selectedViewController;
+        
+        if ([tabSelectVC isKindOfClass:[UINavigationController class]]) {
+            
+            return ((UINavigationController*)tabSelectVC).viewControllers.lastObject;
+        }
+        return tabSelectVC;
+    } else
+        if ([superVC isKindOfClass:[UINavigationController class]]) {
+            
+            return ((UINavigationController*)superVC).viewControllers.lastObject;
+        }
+    return superVC;
 }
 
 @end

@@ -82,6 +82,17 @@
 //打印当前方法名
 #define ITTDPRINTMETHODNAME() ITTDPRINT(@"%s", __PRETTY_FUNCTION__)
 
+//数据验证
+#define StrValid(f) (f!=nil && [f isKindOfClass:[NSString class]] && ![f isEqualToString:@""])
+#define SafeStr(f) (StrValid(f) ? f:@"")
+#define HasString(str,key) ([str rangeOfString:key].location!=NSNotFound)
+
+#define ValidStr(f) StrValid(f)
+#define ValidDict(f) (f!=nil && [f isKindOfClass:[NSDictionary class]])
+#define ValidArray(f) (f!=nil && [f isKindOfClass:[NSArray class]] && [f count]>0)
+#define ValidNum(f) (f!=nil && [f isKindOfClass:[NSNumber class]])
+#define ValidClass(f,cls) (f!=nil && [f isKindOfClass:[cls class]])
+#define ValidData(f) (f!=nil && [f isKindOfClass:[NSData class]])
 
 //发送通知
 #define KPostNotification(name,obj) [[NSNotificationCenter defaultCenter] postNotificationName:name object:obj];

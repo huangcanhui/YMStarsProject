@@ -27,6 +27,10 @@
  */
 - (void)initWindow;
 /**
+ * 初始化用户系统
+ */
+- (void)initUserManager;
+/**
  * 监听网络状态
  */
 - (void)monitorNetworkStatus;

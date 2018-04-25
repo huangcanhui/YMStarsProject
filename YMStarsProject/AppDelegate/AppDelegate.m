@@ -16,6 +16,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     //初始化window
     [self initWindow];
     
@@ -24,6 +25,9 @@
     
     //初始化app服务
     [self initService];
+    
+    //初始化用户系统
+    [self initUserManager];
     
     return YES;
 }
