@@ -55,7 +55,7 @@
 /**
  * 获取用户信息
  */
-#define member_userinfo_Url @"/v1/member/info"
+#define member_userinfo_Url @"/v1/social/current-user"
 
 #pragma mark --------- 工具类 ---------
 /**

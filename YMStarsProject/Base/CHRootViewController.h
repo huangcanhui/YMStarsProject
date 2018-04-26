@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIViewController+AlertViewAndActionSheet.h"
 
 @interface CHRootViewController : UIViewController
 /**

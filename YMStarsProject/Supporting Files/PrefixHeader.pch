@@ -23,7 +23,9 @@
 #import "CHNavigationController.h"
 #import "MBProgressHUD+CH.h"
 #import "UserManager.h"
-#import "PPNetworkHelper.h"
+#import "CHHTTPManager.h"
+#import "NSObject+CH.h"
+#import "AppManager.h"
 
 //第三方
 #import <MBProgressHUD.h>

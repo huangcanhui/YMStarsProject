@@ -25,14 +25,17 @@
 		5B72CF09208F3BA500CA6490 /* CHAddressListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B72CF08208F3BA500CA6490 /* CHAddressListViewController.m */; };
 		5B72CF0C208F3BB400CA6490 /* CHIMListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B72CF0B208F3BB400CA6490 /* CHIMListViewController.m */; };
 		5B72CF0F208F3BBE00CA6490 /* CHMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B72CF0E208F3BBE00CA6490 /* CHMineViewController.m */; };
+		5B8B13062091A60F00A3B512 /* UIViewController+AlertViewAndActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8B13052091A60F00A3B512 /* UIViewController+AlertViewAndActionSheet.m */; };
+		5B8B13092091AFEC00A3B512 /* CHHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8B13082091AFEC00A3B512 /* CHHTTPManager.m */; };
+		5B8B130E2091CE6700A3B512 /* NSObject+CH.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8B130C2091CE6700A3B512 /* NSObject+CH.m */; };
 		5B909229209063C90086911A /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B909228209063C90086911A /* UserManager.m */; };
 		5B90922C209064390086911A /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B90922B209064390086911A /* UserInfo.m */; };
 		5B90922F2090653C0086911A /* UserToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B90922E2090653C0086911A /* UserToken.m */; };
 		5B90923320906C4F0086911A /* MBProgressHUD+CH.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B90923220906C4F0086911A /* MBProgressHUD+CH.m */; };
 		5B90923D20907D560086911A /* HeaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B90923C20907D560086911A /* HeaderModel.m */; };
-		5B90923E209083C90086911A /* PPNetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B90923720907CA00086911A /* PPNetworkCache.m */; };
-		5B90923F209083C90086911A /* PPNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B90923820907CA00086911A /* PPNetworkHelper.m */; };
-		5B909240209083C90086911A /* AESCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B90923920907CF10086911A /* AESCipher.m */; };
+		5BF98C342091CFF300C9BD76 /* CHTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8B130B2091CDF900A3B512 /* CHTime.m */; };
+		5BF98C382091DB1F00C9BD76 /* CHADPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF98C372091DB1F00C9BD76 /* CHADPageView.m */; };
+		5BF98C3B2091E0E800C9BD76 /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF98C3A2091E0E800C9BD76 /* AppManager.m */; };
 		A4B01DA84034057C4EC80B75 /* libPods-YMStarsProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09596B929F72A4C5FF8054F8 /* libPods-YMStarsProject.a */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +100,14 @@
 		5B72CF0B208F3BB400CA6490 /* CHIMListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHIMListViewController.m; sourceTree = "<group>"; };
 		5B72CF0D208F3BBE00CA6490 /* CHMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHMineViewController.h; sourceTree = "<group>"; };
 		5B72CF0E208F3BBE00CA6490 /* CHMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHMineViewController.m; sourceTree = "<group>"; };
+		5B8B13042091A60F00A3B512 /* UIViewController+AlertViewAndActionSheet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AlertViewAndActionSheet.h"; sourceTree = "<group>"; };
+		5B8B13052091A60F00A3B512 /* UIViewController+AlertViewAndActionSheet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AlertViewAndActionSheet.m"; sourceTree = "<group>"; };
+		5B8B13072091AFEC00A3B512 /* CHHTTPManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHHTTPManager.h; sourceTree = "<group>"; };
+		5B8B13082091AFEC00A3B512 /* CHHTTPManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHHTTPManager.m; sourceTree = "<group>"; };
+		5B8B130A2091CDF900A3B512 /* CHTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHTime.h; sourceTree = "<group>"; };
+		5B8B130B2091CDF900A3B512 /* CHTime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHTime.m; sourceTree = "<group>"; };
+		5B8B130C2091CE6700A3B512 /* NSObject+CH.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CH.m"; sourceTree = "<group>"; };
+		5B8B130D2091CE6700A3B512 /* NSObject+CH.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+CH.h"; sourceTree = "<group>"; };
 		5B90922420905F430086911A /* URLMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLMacros.h; sourceTree = "<group>"; };
 		5B909225209061FD0086911A /* ThirdMarcos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdMarcos.h; sourceTree = "<group>"; };
 		5B909227209063C90086911A /* UserManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
@@ -107,14 +118,12 @@
 		5B90922E2090653C0086911A /* UserToken.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserToken.m; sourceTree = "<group>"; };
 		5B90923120906C4F0086911A /* MBProgressHUD+CH.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+CH.h"; sourceTree = "<group>"; };
 		5B90923220906C4F0086911A /* MBProgressHUD+CH.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+CH.m"; sourceTree = "<group>"; };
-		5B90923520907CA00086911A /* PPNetworkCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPNetworkCache.h; sourceTree = "<group>"; };
-		5B90923620907CA00086911A /* PPNetworkHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPNetworkHelper.h; sourceTree = "<group>"; };
-		5B90923720907CA00086911A /* PPNetworkCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPNetworkCache.m; sourceTree = "<group>"; };
-		5B90923820907CA00086911A /* PPNetworkHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPNetworkHelper.m; sourceTree = "<group>"; };
-		5B90923920907CF10086911A /* AESCipher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AESCipher.m; sourceTree = "<group>"; };
-		5B90923A20907CF10086911A /* AESCipher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AESCipher.h; sourceTree = "<group>"; };
 		5B90923B20907D560086911A /* HeaderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderModel.h; sourceTree = "<group>"; };
 		5B90923C20907D560086911A /* HeaderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderModel.m; sourceTree = "<group>"; };
+		5BF98C362091DB1F00C9BD76 /* CHADPageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHADPageView.h; sourceTree = "<group>"; };
+		5BF98C372091DB1F00C9BD76 /* CHADPageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHADPageView.m; sourceTree = "<group>"; };
+		5BF98C392091E0E800C9BD76 /* AppManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppManager.h; sourceTree = "<group>"; };
+		5BF98C3A2091E0E800C9BD76 /* AppManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +243,8 @@
 			isa = PBXGroup;
 			children = (
 				5B909226209063B40086911A /* UserManager */,
+				5BF98C392091E0E800C9BD76 /* AppManager.h */,
+				5BF98C3A2091E0E800C9BD76 /* AppManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -241,6 +252,9 @@
 		5B72CEC6208EFDF800CA6490 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5B8B130A2091CDF900A3B512 /* CHTime.h */,
+				5B8B130B2091CDF900A3B512 /* CHTime.m */,
+				5BF98C352091DAFB00C9BD76 /* ADPage(广告) */,
 				5B90923420907C5C0086911A /* NetWork */,
 				5B90923020906C390086911A /* Category */,
 			);
@@ -485,8 +499,12 @@
 		5B90923020906C390086911A /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				5B8B130D2091CE6700A3B512 /* NSObject+CH.h */,
+				5B8B130C2091CE6700A3B512 /* NSObject+CH.m */,
 				5B90923120906C4F0086911A /* MBProgressHUD+CH.h */,
 				5B90923220906C4F0086911A /* MBProgressHUD+CH.m */,
+				5B8B13042091A60F00A3B512 /* UIViewController+AlertViewAndActionSheet.h */,
+				5B8B13052091A60F00A3B512 /* UIViewController+AlertViewAndActionSheet.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -494,16 +512,21 @@
 		5B90923420907C5C0086911A /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
-				5B90923520907CA00086911A /* PPNetworkCache.h */,
-				5B90923720907CA00086911A /* PPNetworkCache.m */,
-				5B90923620907CA00086911A /* PPNetworkHelper.h */,
-				5B90923820907CA00086911A /* PPNetworkHelper.m */,
-				5B90923A20907CF10086911A /* AESCipher.h */,
-				5B90923920907CF10086911A /* AESCipher.m */,
 				5B90923B20907D560086911A /* HeaderModel.h */,
 				5B90923C20907D560086911A /* HeaderModel.m */,
+				5B8B13072091AFEC00A3B512 /* CHHTTPManager.h */,
+				5B8B13082091AFEC00A3B512 /* CHHTTPManager.m */,
 			);
 			path = NetWork;
+			sourceTree = "<group>";
+		};
+		5BF98C352091DAFB00C9BD76 /* ADPage(广告) */ = {
+			isa = PBXGroup;
+			children = (
+				5BF98C362091DB1F00C9BD76 /* CHADPageView.h */,
+				5BF98C372091DB1F00C9BD76 /* CHADPageView.m */,
+			);
+			path = "ADPage(广告)";
 			sourceTree = "<group>";
 		};
 		9375A4C3D12C3C47FFF47591 /* Frameworks */ = {
@@ -704,27 +727,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B90923E209083C90086911A /* PPNetworkCache.m in Sources */,
-				5B90923F209083C90086911A /* PPNetworkHelper.m in Sources */,
-				5B909240209083C90086911A /* AESCipher.m in Sources */,
+				5BF98C342091CFF300C9BD76 /* CHTime.m in Sources */,
 				5B72CF06208F3B8F00CA6490 /* CHOrganizationViewController.m in Sources */,
 				5B72CEF0208F2D1B00CA6490 /* UITabBar+CH.m in Sources */,
 				5B72CED6208F03B100CA6490 /* AppDelegate+AppService.m in Sources */,
 				5B72CEA1208EFB2F00CA6490 /* main.m in Sources */,
 				5B72CEDC208F051C00CA6490 /* MainTabBarController.m in Sources */,
+				5B8B13092091AFEC00A3B512 /* CHHTTPManager.m in Sources */,
 				5B72CEF3208F2EDC00CA6490 /* CHTabBar.m in Sources */,
 				5B90922F2090653C0086911A /* UserToken.m in Sources */,
 				5B72CE93208EFB2F00CA6490 /* AppDelegate.m in Sources */,
 				5B72CF0C208F3BB400CA6490 /* CHIMListViewController.m in Sources */,
+				5BF98C3B2091E0E800C9BD76 /* AppManager.m in Sources */,
+				5B8B130E2091CE6700A3B512 /* NSObject+CH.m in Sources */,
 				5B909229209063C90086911A /* UserManager.m in Sources */,
 				5B90923320906C4F0086911A /* MBProgressHUD+CH.m in Sources */,
 				5B72CF0F208F3BBE00CA6490 /* CHMineViewController.m in Sources */,
 				5B72CF09208F3BA500CA6490 /* CHAddressListViewController.m in Sources */,
 				5B72CEE2208F1AB900CA6490 /* CHNavigationController.m in Sources */,
+				5BF98C382091DB1F00C9BD76 /* CHADPageView.m in Sources */,
 				5B90923D20907D560086911A /* HeaderModel.m in Sources */,
 				5B72CEE5208F22B800CA6490 /* CHRootViewController.m in Sources */,
 				5B90922C209064390086911A /* UserInfo.m in Sources */,
 				5B72CEEC208F2B9100CA6490 /* CHLoginViewController.m in Sources */,
+				5B8B13062091A60F00A3B512 /* UIViewController+AlertViewAndActionSheet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

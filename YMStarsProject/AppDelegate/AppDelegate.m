@@ -20,14 +20,17 @@
     //初始化window
     [self initWindow];
     
-    //初始化网络配置
-    [self NetWorkConfig];
-    
     //初始化app服务
     [self initService];
     
     //初始化用户系统
     [self initUserManager];
+    
+    //网络监听
+    [self monitorNetworkStatus];
+    
+    //启动广告页面
+    [AppManager appStart];
     
     return YES;
 }

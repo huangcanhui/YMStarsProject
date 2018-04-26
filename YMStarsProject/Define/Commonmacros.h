@@ -27,6 +27,12 @@
 //用户model缓存
 #define KUserModelCache @"KUserModelCache"
 
+//用户的token名称
+#define KUserToken @"KUserToken"
+
+//用户token缓存
+#define KUserTokenCache @"KUserTokenCache"
+
 #pragma mark - 网络状态相关
 //网络状态变化
 #define KNotificationNetWorkStateChange @"KNotificationNetWorkStateChange"

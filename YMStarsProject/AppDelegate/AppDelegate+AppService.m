@@ -8,7 +8,6 @@
 
 #import "AppDelegate+AppService.h"
 #import "CHLoginViewController.h"
-#import <YTKNetwork.h>
 
 @implementation AppDelegate(AppService)
 
@@ -20,7 +19,7 @@
 
 - (void)initService
 {
-    //注册登录状态监听
+    //登录状态监听
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginStateChange:) name:KNotificationLoginStateChange object:nil];
     
     //网络状态监听
@@ -111,20 +110,19 @@
 #pragma mark - 网络状态监听
 - (void)monitorNetworkStatus
 {
-    //网络状态改变一次，networkstatusWithBlock就会响应一次
-    [PPNetworkHelper networkStatusWithBlock:^(PPNetworkStatusType status) {
+    [CHHTTPManager networkStatusWithBlock:^(CHNetWorkStatusType status) {
         switch (status) {
-            case PPNetworkStatusUnknown: //未知网络
+            case CHNetWorkStatusUnkonwn: //未知网络
                 DLog(@"网络环境：未知网络");
                 break;
-            case PPNetworkStatusNotReachable: //无网络
+            case CHNetWorkStatusReachable: //无网络
                 DLog(@"网络环境:无网络");
                 KPostNotification(KNotificationNetWorkStateChange, @NO);
                 break;
-            case PPNetworkStatusReachableViaWWAN: //手机网络
+            case CHNetWorkStatusReachableViaWWAN: //手机网络
                 DLog(@"网络环境:手机自带网络");
                 break;
-            case PPNetworkStatusReachableViaWiFi: //WiFi
+            case CHNetWorkStatusReachableViaWiFi: //WiFi
                 DLog(@"网络环境:WiFi");
                 KPostNotification(KNotificationNetWorkStateChange, @YES);
                 break;
@@ -135,11 +133,11 @@
 }
 
 #pragma mark - 初始化网络配置
-- (void)NetWorkConfig
-{
-    YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
-    config.baseUrl = URL_main;
-}
+//- (void)NetWorkConfig
+//{
+//    YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
+//    config.baseUrl = URL_main;
+//}
 
 - (UIViewController *)getCurrentVC
 {

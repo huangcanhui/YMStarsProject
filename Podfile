@@ -6,4 +6,5 @@ pod 'MJRefresh'
 pod 'MBProgressHUD'
 pod 'YYKit'
 pod 'YTKNetwork'
+pod 'MJExtension'
 end

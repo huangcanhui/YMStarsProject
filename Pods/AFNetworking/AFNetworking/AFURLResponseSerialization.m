@@ -126,6 +126,9 @@ static id AFJSONObjectByRemovingKeysWithNullValues(id JSONObject, NSJSONReadingO
                                                         } mutableCopy];
                 if (data) {
                     mutableUserInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] = data;
+#ifdef DEBUG
+                    NSString * const AFNetworkingOperationFailingURLResponseStringErrorKey =  @"com.alamofire.serialization.response.error.string";
+#endif
                 }
 
                 validationError = AFErrorWithUnderlyingError([NSError errorWithDomain:AFURLResponseSerializationErrorDomain code:NSURLErrorCannotDecodeContentData userInfo:mutableUserInfo], validationError);
@@ -143,6 +146,9 @@ static id AFJSONObjectByRemovingKeysWithNullValues(id JSONObject, NSJSONReadingO
 
             if (data) {
                 mutableUserInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] = data;
+#ifdef DEBUG
+                NSString * const AFNetworkingOperationFailingURLResponseStringErrorKey =  @"com.alamofire.serialization.response.error.string";
+#endif
             }
 
             validationError = AFErrorWithUnderlyingError([NSError errorWithDomain:AFURLResponseSerializationErrorDomain code:NSURLErrorBadServerResponse userInfo:mutableUserInfo], validationError);

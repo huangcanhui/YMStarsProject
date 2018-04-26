@@ -34,10 +34,10 @@
  * 监听网络状态
  */
 - (void)monitorNetworkStatus;
-/**
- * 初始化网络配置
- */
-- (void)NetWorkConfig;
+///**
+// * 初始化网络配置
+// */
+//- (void)NetWorkConfig;
 /**
  * 当前顶层控制器
  */
