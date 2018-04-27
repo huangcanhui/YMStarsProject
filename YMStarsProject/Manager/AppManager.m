@@ -8,6 +8,8 @@
 
 #import "AppManager.h"
 #import "CHADPageView.h"
+#import "CHBaseWebViewController.h"
+#import "CHLoginViewController.h"
 
 @implementation AppManager
 
@@ -15,7 +17,8 @@
 {
     //加载广告
     CHADPageView *adView = [[CHADPageView alloc] initWithFrame:kScreen_Bounds withTapBlock:^{
-        DLog(@"点击了");
+        CHNavigationController *loginNavi = [[CHNavigationController alloc] initWithRootViewController:[[CHBaseWebViewController alloc] initWithUrl:@"http://www.baidu.com"]];
+        [kRootViewController presentViewController:loginNavi animated:YES completion:nil];
     }];
     adView = adView;
 }

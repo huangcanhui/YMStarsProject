@@ -25,6 +25,9 @@
 		5B72CF09208F3BA500CA6490 /* CHAddressListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B72CF08208F3BA500CA6490 /* CHAddressListViewController.m */; };
 		5B72CF0C208F3BB400CA6490 /* CHIMListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B72CF0B208F3BB400CA6490 /* CHIMListViewController.m */; };
 		5B72CF0F208F3BBE00CA6490 /* CHMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B72CF0E208F3BBE00CA6490 /* CHMineViewController.m */; };
+		5B88978A2092F7E600450351 /* CHJSHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8897892092F7E600450351 /* CHJSHandler.m */; };
+		5B88978D2092FA5A00450351 /* CHWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B88978C2092FA5A00450351 /* CHWebViewController.m */; };
+		5B88979020931A7200450351 /* CHBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B88978F20931A7200450351 /* CHBaseWebViewController.m */; };
 		5B8B13062091A60F00A3B512 /* UIViewController+AlertViewAndActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8B13052091A60F00A3B512 /* UIViewController+AlertViewAndActionSheet.m */; };
 		5B8B13092091AFEC00A3B512 /* CHHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8B13082091AFEC00A3B512 /* CHHTTPManager.m */; };
 		5B8B130E2091CE6700A3B512 /* NSObject+CH.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8B130C2091CE6700A3B512 /* NSObject+CH.m */; };
@@ -100,6 +103,12 @@
 		5B72CF0B208F3BB400CA6490 /* CHIMListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHIMListViewController.m; sourceTree = "<group>"; };
 		5B72CF0D208F3BBE00CA6490 /* CHMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHMineViewController.h; sourceTree = "<group>"; };
 		5B72CF0E208F3BBE00CA6490 /* CHMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHMineViewController.m; sourceTree = "<group>"; };
+		5B8897882092F7E600450351 /* CHJSHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHJSHandler.h; sourceTree = "<group>"; };
+		5B8897892092F7E600450351 /* CHJSHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHJSHandler.m; sourceTree = "<group>"; };
+		5B88978B2092FA5A00450351 /* CHWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHWebViewController.h; sourceTree = "<group>"; };
+		5B88978C2092FA5A00450351 /* CHWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHWebViewController.m; sourceTree = "<group>"; };
+		5B88978E20931A7200450351 /* CHBaseWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHBaseWebViewController.h; sourceTree = "<group>"; };
+		5B88978F20931A7200450351 /* CHBaseWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHBaseWebViewController.m; sourceTree = "<group>"; };
 		5B8B13042091A60F00A3B512 /* UIViewController+AlertViewAndActionSheet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AlertViewAndActionSheet.h"; sourceTree = "<group>"; };
 		5B8B13052091A60F00A3B512 /* UIViewController+AlertViewAndActionSheet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AlertViewAndActionSheet.m"; sourceTree = "<group>"; };
 		5B8B13072091AFEC00A3B512 /* CHHTTPManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHHTTPManager.h; sourceTree = "<group>"; };
@@ -264,6 +273,7 @@
 		5B72CEC7208EFE0E00CA6490 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				5B8897872092F7C500450351 /* WebViewController */,
 				5B72CEED208F2CB600CA6490 /* TabbarController */,
 				5B72CEE0208F1AB900CA6490 /* CHNavigationController.h */,
 				5B72CEE1208F1AB900CA6490 /* CHNavigationController.m */,
@@ -481,6 +491,19 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5B8897872092F7C500450351 /* WebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5B8897882092F7E600450351 /* CHJSHandler.h */,
+				5B8897892092F7E600450351 /* CHJSHandler.m */,
+				5B88978B2092FA5A00450351 /* CHWebViewController.h */,
+				5B88978C2092FA5A00450351 /* CHWebViewController.m */,
+				5B88978E20931A7200450351 /* CHBaseWebViewController.h */,
+				5B88978F20931A7200450351 /* CHBaseWebViewController.m */,
+			);
+			path = WebViewController;
 			sourceTree = "<group>";
 		};
 		5B909226209063B40086911A /* UserManager */ = {
@@ -740,12 +763,15 @@
 				5B72CF0C208F3BB400CA6490 /* CHIMListViewController.m in Sources */,
 				5BF98C3B2091E0E800C9BD76 /* AppManager.m in Sources */,
 				5B8B130E2091CE6700A3B512 /* NSObject+CH.m in Sources */,
+				5B88978A2092F7E600450351 /* CHJSHandler.m in Sources */,
+				5B88978D2092FA5A00450351 /* CHWebViewController.m in Sources */,
 				5B909229209063C90086911A /* UserManager.m in Sources */,
 				5B90923320906C4F0086911A /* MBProgressHUD+CH.m in Sources */,
 				5B72CF0F208F3BBE00CA6490 /* CHMineViewController.m in Sources */,
 				5B72CF09208F3BA500CA6490 /* CHAddressListViewController.m in Sources */,
 				5B72CEE2208F1AB900CA6490 /* CHNavigationController.m in Sources */,
 				5BF98C382091DB1F00C9BD76 /* CHADPageView.m in Sources */,
+				5B88979020931A7200450351 /* CHBaseWebViewController.m in Sources */,
 				5B90923D20907D560086911A /* HeaderModel.m in Sources */,
 				5B72CEE5208F22B800CA6490 /* CHRootViewController.m in Sources */,
 				5B90922C209064390086911A /* UserInfo.m in Sources */,

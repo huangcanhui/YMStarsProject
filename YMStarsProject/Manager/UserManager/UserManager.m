@@ -53,7 +53,7 @@ SINGLETON_FOR_CLASS(UserManager);
 - (void)loginToServer:(NSDictionary *)params path:(NSString *)path completion:(loginBlock)block
 {
     [MBProgressHUD showActivityMessageInView:@"登录中..."];
-    //在这边进行网络数据的请求
+
     [[CHHTTPManager manager] requestWithMethod:POST WithPath:path WithParams:params WithSuccessBlock:^(NSDictionary *responseObject) {
         self.token = [UserToken modelWithDictionary:responseObject[@"data"]];
         //存储token
