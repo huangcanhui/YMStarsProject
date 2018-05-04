@@ -32,6 +32,14 @@
 		5B8B13092091AFEC00A3B512 /* CHHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8B13082091AFEC00A3B512 /* CHHTTPManager.m */; };
 		5B8B130E2091CE6700A3B512 /* NSObject+CH.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8B130C2091CE6700A3B512 /* NSObject+CH.m */; };
 		5B8F92ED209C2F5600A9DB9C /* CHTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F92EC209C2F5600A9DB9C /* CHTransition.m */; };
+		5B8F9310209C3C7500A9DB9C /* CHUserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F930F209C3C7500A9DB9C /* CHUserView.m */; };
+		5B8F9314209C3D0700A9DB9C /* CHPersonalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F9313209C3D0700A9DB9C /* CHPersonalTableViewCell.m */; };
+		5B8F9315209C41E100A9DB9C /* CHPersonalGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F930D209C3BC700A9DB9C /* CHPersonalGroup.m */; };
+		5B8F9316209C41E100A9DB9C /* CHPersonalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F9309209C3BC700A9DB9C /* CHPersonalModel.m */; };
+		5B8F9317209C446400A9DB9C /* CHPersonalList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B8F930A209C3BC700A9DB9C /* CHPersonalList.plist */; };
+		5B8F9318209C44AD00A9DB9C /* CHPersonalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B8F9312209C3D0700A9DB9C /* CHPersonalTableViewCell.xib */; };
+		5B8F931A209C47E500A9DB9C /* CHUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B8F9319209C47DE00A9DB9C /* CHUserView.xib */; };
+		5B8F931D209C4BAD00A9DB9C /* CHNetString.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F931C209C4BAC00A9DB9C /* CHNetString.m */; };
 		5B909229209063C90086911A /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B909228209063C90086911A /* UserManager.m */; };
 		5B90922C209064390086911A /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B90922B209064390086911A /* UserInfo.m */; };
 		5B90922F2090653C0086911A /* UserToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B90922E2090653C0086911A /* UserToken.m */; };
@@ -121,6 +129,19 @@
 		5B8F92EB209C2F5600A9DB9C /* CHTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHTransition.h; sourceTree = "<group>"; };
 		5B8F92EC209C2F5600A9DB9C /* CHTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHTransition.m; sourceTree = "<group>"; };
 		5B8F92F4209C324900A9DB9C /* CHTransitionProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHTransitionProtocol.h; sourceTree = "<group>"; };
+		5B8F9309209C3BC700A9DB9C /* CHPersonalModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHPersonalModel.m; sourceTree = "<group>"; };
+		5B8F930A209C3BC700A9DB9C /* CHPersonalList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CHPersonalList.plist; sourceTree = "<group>"; };
+		5B8F930B209C3BC700A9DB9C /* CHPersonalGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHPersonalGroup.h; sourceTree = "<group>"; };
+		5B8F930C209C3BC700A9DB9C /* CHPersonalModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHPersonalModel.h; sourceTree = "<group>"; };
+		5B8F930D209C3BC700A9DB9C /* CHPersonalGroup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHPersonalGroup.m; sourceTree = "<group>"; };
+		5B8F930E209C3C7500A9DB9C /* CHUserView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHUserView.h; sourceTree = "<group>"; };
+		5B8F930F209C3C7500A9DB9C /* CHUserView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHUserView.m; sourceTree = "<group>"; };
+		5B8F9311209C3D0700A9DB9C /* CHPersonalTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHPersonalTableViewCell.h; sourceTree = "<group>"; };
+		5B8F9312209C3D0700A9DB9C /* CHPersonalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CHPersonalTableViewCell.xib; sourceTree = "<group>"; };
+		5B8F9313209C3D0700A9DB9C /* CHPersonalTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHPersonalTableViewCell.m; sourceTree = "<group>"; };
+		5B8F9319209C47DE00A9DB9C /* CHUserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CHUserView.xib; sourceTree = "<group>"; };
+		5B8F931B209C4BAC00A9DB9C /* CHNetString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHNetString.h; sourceTree = "<group>"; };
+		5B8F931C209C4BAC00A9DB9C /* CHNetString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHNetString.m; sourceTree = "<group>"; };
 		5B90922420905F430086911A /* URLMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLMacros.h; sourceTree = "<group>"; };
 		5B909225209061FD0086911A /* ThirdMarcos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdMarcos.h; sourceTree = "<group>"; };
 		5B909227209063C90086911A /* UserManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
@@ -268,6 +289,8 @@
 				5B8F92EA209C2F3000A9DB9C /* CHTransition */,
 				5B8B130A2091CDF900A3B512 /* CHTime.h */,
 				5B8B130B2091CDF900A3B512 /* CHTime.m */,
+				5B8F931B209C4BAC00A9DB9C /* CHNetString.h */,
+				5B8F931C209C4BAC00A9DB9C /* CHNetString.m */,
 				5BF98C352091DAFB00C9BD76 /* ADPage(广告) */,
 				5B90923420907C5C0086911A /* NetWork */,
 				5B90923020906C390086911A /* Category */,
@@ -468,6 +491,11 @@
 		5B72CF00208F311900CA6490 /* Mine(个人) */ = {
 			isa = PBXGroup;
 			children = (
+				5B8F9305209C3B8F00A9DB9C /* AboutUs(关于我们) */,
+				5B8F9301209C3B7400A9DB9C /* Game(游戏) */,
+				5B8F92FD209C3B6200A9DB9C /* Service(客服) */,
+				5B8F92F9209C3B4100A9DB9C /* PersaonalData(资料) */,
+				5B8F92F5209C3B0F00A9DB9C /* SetUp(设置) */,
 				5B72CF01208F311900CA6490 /* Controller */,
 				5B72CF02208F311900CA6490 /* Model */,
 				5B72CF03208F311900CA6490 /* View */,
@@ -487,6 +515,11 @@
 		5B72CF02208F311900CA6490 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5B8F930B209C3BC700A9DB9C /* CHPersonalGroup.h */,
+				5B8F930D209C3BC700A9DB9C /* CHPersonalGroup.m */,
+				5B8F930A209C3BC700A9DB9C /* CHPersonalList.plist */,
+				5B8F930C209C3BC700A9DB9C /* CHPersonalModel.h */,
+				5B8F9309209C3BC700A9DB9C /* CHPersonalModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -494,6 +527,12 @@
 		5B72CF03208F311900CA6490 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5B8F9311209C3D0700A9DB9C /* CHPersonalTableViewCell.h */,
+				5B8F9313209C3D0700A9DB9C /* CHPersonalTableViewCell.m */,
+				5B8F9312209C3D0700A9DB9C /* CHPersonalTableViewCell.xib */,
+				5B8F930E209C3C7500A9DB9C /* CHUserView.h */,
+				5B8F930F209C3C7500A9DB9C /* CHUserView.m */,
+				5B8F9319209C47DE00A9DB9C /* CHUserView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -519,6 +558,161 @@
 				5B8F92F4209C324900A9DB9C /* CHTransitionProtocol.h */,
 			);
 			path = CHTransition;
+			sourceTree = "<group>";
+		};
+		5B8F92F5209C3B0F00A9DB9C /* SetUp(设置) */ = {
+			isa = PBXGroup;
+			children = (
+				5B8F92F6209C3B0F00A9DB9C /* Controller */,
+				5B8F92F7209C3B0F00A9DB9C /* Model */,
+				5B8F92F8209C3B0F00A9DB9C /* View */,
+			);
+			path = "SetUp(设置)";
+			sourceTree = "<group>";
+		};
+		5B8F92F6209C3B0F00A9DB9C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5B8F92F7209C3B0F00A9DB9C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5B8F92F8209C3B0F00A9DB9C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5B8F92F9209C3B4100A9DB9C /* PersaonalData(资料) */ = {
+			isa = PBXGroup;
+			children = (
+				5B8F92FA209C3B4100A9DB9C /* Controller */,
+				5B8F92FB209C3B4100A9DB9C /* Model */,
+				5B8F92FC209C3B4100A9DB9C /* View */,
+			);
+			path = "PersaonalData(资料)";
+			sourceTree = "<group>";
+		};
+		5B8F92FA209C3B4100A9DB9C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5B8F92FB209C3B4100A9DB9C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5B8F92FC209C3B4100A9DB9C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5B8F92FD209C3B6200A9DB9C /* Service(客服) */ = {
+			isa = PBXGroup;
+			children = (
+				5B8F92FE209C3B6200A9DB9C /* Controller */,
+				5B8F92FF209C3B6200A9DB9C /* Model */,
+				5B8F9300209C3B6200A9DB9C /* View */,
+			);
+			path = "Service(客服)";
+			sourceTree = "<group>";
+		};
+		5B8F92FE209C3B6200A9DB9C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5B8F92FF209C3B6200A9DB9C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5B8F9300209C3B6200A9DB9C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5B8F9301209C3B7400A9DB9C /* Game(游戏) */ = {
+			isa = PBXGroup;
+			children = (
+				5B8F9302209C3B7400A9DB9C /* Controller */,
+				5B8F9303209C3B7400A9DB9C /* Model */,
+				5B8F9304209C3B7400A9DB9C /* View */,
+			);
+			path = "Game(游戏)";
+			sourceTree = "<group>";
+		};
+		5B8F9302209C3B7400A9DB9C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5B8F9303209C3B7400A9DB9C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5B8F9304209C3B7400A9DB9C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5B8F9305209C3B8F00A9DB9C /* AboutUs(关于我们) */ = {
+			isa = PBXGroup;
+			children = (
+				5B8F9306209C3B8F00A9DB9C /* Controller */,
+				5B8F9307209C3B8F00A9DB9C /* Model */,
+				5B8F9308209C3B8F00A9DB9C /* View */,
+			);
+			path = "AboutUs(关于我们)";
+			sourceTree = "<group>";
+		};
+		5B8F9306209C3B8F00A9DB9C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5B8F9307209C3B8F00A9DB9C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5B8F9308209C3B8F00A9DB9C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5B909226209063B40086911A /* UserManager */ = {
@@ -684,6 +878,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B8F931A209C47E500A9DB9C /* CHUserView.xib in Resources */,
+				5B8F9318209C44AD00A9DB9C /* CHPersonalTableViewCell.xib in Resources */,
+				5B8F9317209C446400A9DB9C /* CHPersonalList.plist in Resources */,
 				5B72CE9E208EFB2F00CA6490 /* LaunchScreen.storyboard in Resources */,
 				5B72CE9B208EFB2F00CA6490 /* Assets.xcassets in Resources */,
 				5B72CE99208EFB2F00CA6490 /* Main.storyboard in Resources */,
@@ -765,12 +962,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B8F9315209C41E100A9DB9C /* CHPersonalGroup.m in Sources */,
+				5B8F9316209C41E100A9DB9C /* CHPersonalModel.m in Sources */,
 				5BF98C342091CFF300C9BD76 /* CHTime.m in Sources */,
 				5B72CF06208F3B8F00CA6490 /* CHOrganizationViewController.m in Sources */,
 				5B72CEF0208F2D1B00CA6490 /* UITabBar+CH.m in Sources */,
 				5B72CED6208F03B100CA6490 /* AppDelegate+AppService.m in Sources */,
 				5B72CEA1208EFB2F00CA6490 /* main.m in Sources */,
 				5B72CEDC208F051C00CA6490 /* MainTabBarController.m in Sources */,
+				5B8F931D209C4BAD00A9DB9C /* CHNetString.m in Sources */,
 				5B8B13092091AFEC00A3B512 /* CHHTTPManager.m in Sources */,
 				5B72CEF3208F2EDC00CA6490 /* CHTabBar.m in Sources */,
 				5B90922F2090653C0086911A /* UserToken.m in Sources */,
@@ -781,6 +981,7 @@
 				5B88978A2092F7E600450351 /* CHJSHandler.m in Sources */,
 				5B88978D2092FA5A00450351 /* CHWebViewController.m in Sources */,
 				5B909229209063C90086911A /* UserManager.m in Sources */,
+				5B8F9314209C3D0700A9DB9C /* CHPersonalTableViewCell.m in Sources */,
 				5B90923320906C4F0086911A /* MBProgressHUD+CH.m in Sources */,
 				5B72CF0F208F3BBE00CA6490 /* CHMineViewController.m in Sources */,
 				5B72CF09208F3BA500CA6490 /* CHAddressListViewController.m in Sources */,
@@ -793,6 +994,7 @@
 				5B72CEEC208F2B9100CA6490 /* CHLoginViewController.m in Sources */,
 				5B8B13062091A60F00A3B512 /* UIViewController+AlertViewAndActionSheet.m in Sources */,
 				5B8F92ED209C2F5600A9DB9C /* CHTransition.m in Sources */,
+				5B8F9310209C3C7500A9DB9C /* CHUserView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -965,7 +1167,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "-------------.YMStarsProject";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/YMStarsProject/Define $(SRCROOT)/YMStarsProject/Utils/CHTransition";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/YMStarsProject/Define $(SRCROOT)/YMStarsProject/Utils/CHTransition $(PODS_ROOT)/**";
 			};
 			name = Debug;
 		};
@@ -983,7 +1185,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "-------------.YMStarsProject";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/YMStarsProject/Define $(SRCROOT)/YMStarsProject/Utils/CHTransition";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/YMStarsProject/Define $(SRCROOT)/YMStarsProject/Utils/CHTransition $(PODS_ROOT)/**";
 			};
 			name = Release;
 		};
