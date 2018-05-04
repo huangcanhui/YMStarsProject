@@ -35,8 +35,13 @@
     //导航栏背景色
     [navBar setBarTintColor:CNavBgColor];
     [navBar setTintColor:CNavBgFontColor];
-    [navBar setTitleTextAttributes:@{NSForegroundColorAttributeName:CNavBgFontColor, NSFontAttributeName:[UIFont systemFontOfSize:18]}];
+    [navBar setTitleTextAttributes:@{NSForegroundColorAttributeName:CNavBgFontColor, NSFontAttributeName:[UIFont systemFontOfSize:16]}];
     [navBar setBackgroundImage:[UIImage imageWithColor:CNavBgColor] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+    //设置返回键
+    UIImage *image = [[UIImage imageNamed:@"back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    navBar.backIndicatorImage = image;
+    navBar.backIndicatorTransitionMaskImage = image;
+    
     [navBar setShadowImage:[UIImage new]]; //去掉阴影线
 }
 
@@ -256,14 +261,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

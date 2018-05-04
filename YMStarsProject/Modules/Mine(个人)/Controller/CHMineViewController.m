@@ -14,6 +14,14 @@
 #import "CHPersonalTableViewCell.h"
 #import "MJExtension.h"
 
+#import "CHPersonalDataViewController.h"
+#import "CHTimesViewController.h"
+#import "CHPhotosViewController.h"
+#import "CHGamesViewController.h"
+#import "CHServiceViewController.h"
+#import "CHAboutUsViewController.h"
+#import "CHSetUpViewController.h"
+
 static NSString *cellBundle = @"PERSONAL";
 @interface CHMineViewController ()<UITableViewDelegate, UITableViewDataSource>
 /**
@@ -78,7 +86,11 @@ static NSString *cellBundle = @"PERSONAL";
 #pragma mark  用户的个人资料
 - (void)enterPersonalDataViewController
 {
-    
+    CHPersonalDataViewController *dataVC = [CHPersonalDataViewController new];
+    dataVC.changeUserInfo = ^{
+        [self getUserData];
+    };
+    [self.navigationController pushViewController:dataVC animated:NO];
 }
 
 #pragma mark UITableView.delegate
@@ -134,7 +146,27 @@ static NSString *cellBundle = @"PERSONAL";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    CHPersonalGroup *group = self.itemGroups[indexPath.section];
+    CHPersonalModel *model = group.activity[indexPath.row];
+    if ([model.title isEqualToString:@"我的时光轴"]) {
+        CHTimesViewController *times = [CHTimesViewController new];
+        [self.navigationController pushViewController:times animated:NO];
+    } else if ([model.title isEqualToString:@"我的云相册"]) {
+        CHPhotosViewController *photoVC = [CHPhotosViewController new];
+        [self.navigationController pushViewController:photoVC animated:NO];
+    } else if ([model.title isEqualToString:@"小游戏"]) {
+        CHGamesViewController *gameVC = [CHGamesViewController new];
+        [self.navigationController pushViewController:gameVC animated:NO];
+    } else if ([model.title isEqualToString:@"我的客服"]) {
+        CHServiceViewController *customVC = [CHServiceViewController new];
+        [self.navigationController pushViewController:customVC animated:NO];
+    } else if ([model.title isEqualToString:@"关于我们"]) {
+        CHAboutUsViewController *aboutVC = [CHAboutUsViewController new];
+        [self.navigationController pushViewController:aboutVC animated:NO];
+    } else if ([model.title isEqualToString:@"设置"]) {
+        CHSetUpViewController *setVC = [CHSetUpViewController new];
+        [self.navigationController pushViewController:setVC animated:NO];
+    }
 }
 
 #pragma mark - 懒加载

@@ -57,6 +57,16 @@
  */
 #define member_userinfo_Url @"/v1/social/current-user"
 
+#pragma mark -------------------- 机构相关 -------------
+/**
+ * 获取用户所拥有的机构列表
+ */
+#define organ_List_Url @"/v1/social/current-user/all-organizations"
+/**
+ * 获取指定的机构信息
+ */
+#define organ_appoint_Url @"/v1/social/organizations/"
+
 #pragma mark --------- 工具类 ---------
 /**
  * 获取七牛token

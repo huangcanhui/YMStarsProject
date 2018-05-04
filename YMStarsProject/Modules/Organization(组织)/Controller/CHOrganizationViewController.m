@@ -8,6 +8,9 @@
 
 #import "CHOrganizationViewController.h"
 
+#import "CHOrganizationListViewController.h"
+#import "CHNavigationController.h"
+
 @interface CHOrganizationViewController ()
 
 @end
@@ -16,7 +19,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    if ([NSString readUserDefaultWithKey:KOrganizationName] != nil) { //即有默认的机构
+        NSString *name = [NSString readUserDefaultWithKey:KOrganizationName];
+        self.navigationItem.title = [NSString readUserDefaultWithKey:KOrganizationName];
+    } else {
+        CHOrganizationListViewController *listVC = [CHOrganizationListViewController new];
+        CHNavigationController *naVC= [[CHNavigationController alloc] initWithRootViewController:listVC];
+        [self presentViewController:naVC animated:NO completion:nil];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

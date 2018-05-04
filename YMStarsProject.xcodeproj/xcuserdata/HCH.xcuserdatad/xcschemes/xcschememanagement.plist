@@ -7,7 +7,25 @@
 		<key>YMStarsProject.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>9</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>5B72CE8D208EFB2F00CA6490</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5B72CEA5208EFB2F00CA6490</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5B72CEB0208EFB2F00CA6490</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

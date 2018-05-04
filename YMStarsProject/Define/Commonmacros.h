@@ -33,6 +33,13 @@
 //用户token缓存
 #define KUserTokenCache @"KUserTokenCache"
 
+#pragma mark - 机构相关
+//机构的ID
+#define KOrganizationID @"KOrganizationID"
+
+//机构名称
+#define KOrganizationName @"KOrganizationName"
+
 #pragma mark - 网络状态相关
 //网络状态变化
 #define KNotificationNetWorkStateChange @"KNotificationNetWorkStateChange"
