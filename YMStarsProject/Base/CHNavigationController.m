@@ -7,6 +7,8 @@
 //
 
 #import "CHNavigationController.h"
+#import "CHTransitionProtocol.h"
+#import "CHTransition.h"
 
 @interface CHNavigationController ()<UINavigationControllerDelegate, UIGestureRecognizerDelegate>
 /**
@@ -82,11 +84,12 @@
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
     if (self.viewControllers.count > 0) {
-        viewController.hidesBottomBarWhenPushed = NO;
-    } else {
-        viewController.hidesBottomBarWhenPushed = YES;
+        if ([viewController conformsToProtocol:@protocol(CHTransitionProtocol)] && [self isNeedTransition:viewController]) {
+            viewController.hidesBottomBarWhenPushed = NO;
+        } else {
+             viewController.hidesBottomBarWhenPushed = YES;
+        }
     }
-    
     [super pushViewController:viewController animated:animated];
     //修改tabbar的frame
     CGRect frame = self.tabBarController.tabBar.frame;
@@ -108,6 +111,12 @@
     }
 }
 
+/**
+ *  返回到指定的类视图
+ *
+ *  @param ClassName 类名
+ *  @param animated  是否动画
+ */
 - (BOOL)popToAppPointViewController:(NSString *)ClassName animated:(BOOL)animated
 {
     id vc = [self getCurrentViewControllerClass:ClassName];
@@ -142,6 +151,71 @@
 - (UIViewController *)childViewControllerForStatusBarStyle
 {
     return self.topViewController;
+}
+
+#pragma mark - 转场动画
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
+{
+    self.isSystemSlidBack = YES;
+    //如果来源VC和目标VC都实现协议，那么都做动画
+    if ([fromVC conformsToProtocol:@protocol(CHTransitionProtocol)] && [toVC conformsToProtocol:@protocol(CHTransitionProtocol)]) {
+        
+        BOOL pinterestNedd = [self isNeedTransition:fromVC:toVC];
+        CHTransition *transion = [CHTransition new];
+        if (operation == UINavigationControllerOperationPush && pinterestNedd) {
+            transion.isPush = YES;
+            
+            //暂时屏蔽带动画的右划返回
+            self.isSystemSlidBack = NO;
+            //            self.isSystemSlidBack = YES;
+        }
+        else if(operation == UINavigationControllerOperationPop && pinterestNedd)
+        {
+            //暂时屏蔽带动画的右划返回
+            //            return nil;
+            
+            transion.isPush = NO;
+            self.isSystemSlidBack = NO;
+        }
+        else{
+            return nil;
+        }
+        return transion;
+    }else if([toVC conformsToProtocol:@protocol(CHTransitionProtocol)]){
+        //如果只有目标VC开启动画，那么isSystemSlidBack也要随之改变
+        BOOL pinterestNedd = [self isNeedTransition:toVC];
+        self.isSystemSlidBack = !pinterestNedd;
+        return nil;
+    }
+    return nil;
+
+}
+
+/**
+ * 判断fromVC和toVC是否需要实现pinterest效果
+ */
+-(BOOL)isNeedTransition:(UIViewController<CHTransitionProtocol> *)fromVC :(UIViewController<CHTransitionProtocol> *)toVC
+{
+    BOOL a = NO;
+    BOOL b = NO;
+    if ([fromVC respondsToSelector:@selector(isNeedTransition)] && [fromVC isNeedTransition]) {
+        a = YES;
+    }
+    if ([toVC respondsToSelector:@selector(isNeedTransition)] && [toVC isNeedTransition]) {
+        b = YES;
+    }
+    return (a && b) ;
+    
+}
+//判断fromVC和toVC是否需要实现pinterest效果
+-(BOOL)isNeedTransition:(UIViewController<CHTransitionProtocol> *)toVC
+{
+    BOOL b = NO;
+    if ([toVC respondsToSelector:@selector(isNeedTransition)] && [toVC isNeedTransition]) {
+        b = YES;
+    }
+    return b;
+    
 }
 
 - (id<UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController

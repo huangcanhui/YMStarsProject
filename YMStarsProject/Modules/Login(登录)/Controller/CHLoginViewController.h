@@ -8,6 +8,6 @@
 
 #import "CHRootViewController.h"
 
-@interface CHLoginViewController : CHRootViewController
+@interface CHLoginViewController : UIViewController
 
 @end

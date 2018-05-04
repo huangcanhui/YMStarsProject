@@ -31,6 +31,7 @@
 		5B8B13062091A60F00A3B512 /* UIViewController+AlertViewAndActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8B13052091A60F00A3B512 /* UIViewController+AlertViewAndActionSheet.m */; };
 		5B8B13092091AFEC00A3B512 /* CHHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8B13082091AFEC00A3B512 /* CHHTTPManager.m */; };
 		5B8B130E2091CE6700A3B512 /* NSObject+CH.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8B130C2091CE6700A3B512 /* NSObject+CH.m */; };
+		5B8F92ED209C2F5600A9DB9C /* CHTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F92EC209C2F5600A9DB9C /* CHTransition.m */; };
 		5B909229209063C90086911A /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B909228209063C90086911A /* UserManager.m */; };
 		5B90922C209064390086911A /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B90922B209064390086911A /* UserInfo.m */; };
 		5B90922F2090653C0086911A /* UserToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B90922E2090653C0086911A /* UserToken.m */; };
@@ -117,6 +118,9 @@
 		5B8B130B2091CDF900A3B512 /* CHTime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHTime.m; sourceTree = "<group>"; };
 		5B8B130C2091CE6700A3B512 /* NSObject+CH.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CH.m"; sourceTree = "<group>"; };
 		5B8B130D2091CE6700A3B512 /* NSObject+CH.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+CH.h"; sourceTree = "<group>"; };
+		5B8F92EB209C2F5600A9DB9C /* CHTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHTransition.h; sourceTree = "<group>"; };
+		5B8F92EC209C2F5600A9DB9C /* CHTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHTransition.m; sourceTree = "<group>"; };
+		5B8F92F4209C324900A9DB9C /* CHTransitionProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHTransitionProtocol.h; sourceTree = "<group>"; };
 		5B90922420905F430086911A /* URLMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLMacros.h; sourceTree = "<group>"; };
 		5B909225209061FD0086911A /* ThirdMarcos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdMarcos.h; sourceTree = "<group>"; };
 		5B909227209063C90086911A /* UserManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
@@ -261,6 +265,7 @@
 		5B72CEC6208EFDF800CA6490 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5B8F92EA209C2F3000A9DB9C /* CHTransition */,
 				5B8B130A2091CDF900A3B512 /* CHTime.h */,
 				5B8B130B2091CDF900A3B512 /* CHTime.m */,
 				5BF98C352091DAFB00C9BD76 /* ADPage(广告) */,
@@ -504,6 +509,16 @@
 				5B88978F20931A7200450351 /* CHBaseWebViewController.m */,
 			);
 			path = WebViewController;
+			sourceTree = "<group>";
+		};
+		5B8F92EA209C2F3000A9DB9C /* CHTransition */ = {
+			isa = PBXGroup;
+			children = (
+				5B8F92EB209C2F5600A9DB9C /* CHTransition.h */,
+				5B8F92EC209C2F5600A9DB9C /* CHTransition.m */,
+				5B8F92F4209C324900A9DB9C /* CHTransitionProtocol.h */,
+			);
+			path = CHTransition;
 			sourceTree = "<group>";
 		};
 		5B909226209063B40086911A /* UserManager */ = {
@@ -777,6 +792,7 @@
 				5B90922C209064390086911A /* UserInfo.m in Sources */,
 				5B72CEEC208F2B9100CA6490 /* CHLoginViewController.m in Sources */,
 				5B8B13062091A60F00A3B512 /* UIViewController+AlertViewAndActionSheet.m in Sources */,
+				5B8F92ED209C2F5600A9DB9C /* CHTransition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -949,7 +965,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "-------------.YMStarsProject";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/YMStarsProject/Define";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/YMStarsProject/Define $(SRCROOT)/YMStarsProject/Utils/CHTransition";
 			};
 			name = Debug;
 		};
@@ -967,7 +983,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "-------------.YMStarsProject";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/YMStarsProject/Define";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/YMStarsProject/Define $(SRCROOT)/YMStarsProject/Utils/CHTransition";
 			};
 			name = Release;
 		};

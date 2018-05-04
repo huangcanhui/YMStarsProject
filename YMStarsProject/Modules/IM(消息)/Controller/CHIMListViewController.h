@@ -8,6 +8,6 @@
 
 #import "CHRootViewController.h"
 
-@interface CHIMListViewController : CHRootViewController
+@interface CHIMListViewController : UIViewController
 
 @end

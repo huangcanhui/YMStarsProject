@@ -69,7 +69,7 @@
     CHMineViewController *mineVC = [CHMineViewController new];
     [self setupChildViewController:mineVC title:@"个人中心" imageName:@"tab_mine" seleceImageName:@"tab_mine_select"];
     
-     self.viewControllers = _VCS;
+    self.viewControllers = _VCS;
 }
 
 -(void)setupChildViewController:(UIViewController*)controller title:(NSString *)title imageName:(NSString *)imageName seleceImageName:(NSString *)selectImageName{
@@ -85,7 +85,7 @@
     //包装导航控制器
     CHNavigationController *nav = [[CHNavigationController alloc]initWithRootViewController:controller];
     
-    //    [self addChildViewController:nav];
+//        [self addChildViewController:nav];
     [_VCS addObject:nav];
     
 }
@@ -102,7 +102,15 @@
     }
 }
 
+- (BOOL)shouldAutorotate
+{
+    return [self.selectedViewController shouldAutorotate];
+}
 
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    return [self.selectedViewController supportedInterfaceOrientations];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -8,6 +8,6 @@
 
 #import "CHRootViewController.h"
 
-@interface CHAddressListViewController : CHRootViewController
+@interface CHAddressListViewController : UIViewController
 
 @end

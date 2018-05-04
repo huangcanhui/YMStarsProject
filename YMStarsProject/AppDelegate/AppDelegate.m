@@ -29,8 +29,8 @@
     //网络监听
     [self monitorNetworkStatus];
     
-    //启动广告页面
-    [AppManager appStart];
+//    //启动广告页面
+//    [AppManager appStart];
     
     return YES;
 }

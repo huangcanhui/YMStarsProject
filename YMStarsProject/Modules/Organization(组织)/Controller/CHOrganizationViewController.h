@@ -8,6 +8,6 @@
 
 #import "CHRootViewController.h"
 
-@interface CHOrganizationViewController : CHRootViewController
+@interface CHOrganizationViewController : UIViewController
 
 @end
