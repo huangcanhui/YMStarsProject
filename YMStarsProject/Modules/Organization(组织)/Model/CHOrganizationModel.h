@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class FunctionObject;
+@class typeObject;
+
+NS_ASSUME_NONNULL_BEGIN
+
 @interface CHOrganizationModel : NSObject
 /**
  * 状态
@@ -65,4 +70,64 @@
  * 机构ID
  */
 @property (nonatomic, strong)NSNumber *id;
+/**
+ * 已开通的功能
+ */
+@property (nonatomic, strong)NSArray <FunctionObject *> *functionObjects;
+/**
+ * 机构的类型
+ */
+@property (nonatomic, strong)typeObject *type;
+
 @end
+
+#pragma mark 机构开通的功能模块
+@interface FunctionObject : NSObject
+/**
+ * 图片
+ */
+@property (nonatomic, copy)NSString *icon;
+/**
+ * 标题
+ */
+@property (nonatomic, copy)NSString *name;
+/**
+ * ID
+ */
+@property (nonatomic, strong)NSNumber *id;
+/**
+ * 介绍
+ */
+@property (nonatomic, copy)NSString *introduction;
+/**
+ * 标识
+ */
+@property (nonatomic, copy)NSString *sign;
+
+@end
+
+#pragma mark - 机构的类型
+@interface typeObject : NSObject
+/**
+ * id
+ */
+@property (nonatomic, strong)NSNumber *id;
+/**
+ * 名称
+ */
+@property (nonatomic, copy)NSString *name;
+/**
+ * 介绍
+ */
+@property (nonatomic, copy)NSString *introduction;
+/**
+ * 标识
+ */
+@property (nonatomic, copy)NSString *sign;
+/**
+ * 图片
+ */
+@property (nonatomic, copy)NSString *icon;
+@end
+
+NS_ASSUME_NONNULL_END

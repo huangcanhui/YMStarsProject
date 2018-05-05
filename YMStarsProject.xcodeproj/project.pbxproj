@@ -28,6 +28,16 @@
 		5B88978A2092F7E600450351 /* CHJSHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8897892092F7E600450351 /* CHJSHandler.m */; };
 		5B88978D2092FA5A00450351 /* CHWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B88978C2092FA5A00450351 /* CHWebViewController.m */; };
 		5B88979020931A7200450351 /* CHBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B88978F20931A7200450351 /* CHBaseWebViewController.m */; };
+		5B89FFBF209D863B002FEBC7 /* CH_Organization_ADPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B89FFBE209D863B002FEBC7 /* CH_Organization_ADPlayer.m */; };
+		5B89FFC2209D86A5002FEBC7 /* CH_Organization_Function.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B89FFC1209D86A5002FEBC7 /* CH_Organization_Function.m */; };
+		5B89FFC5209D86E9002FEBC7 /* CH_Organization_ListTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B89FFC4209D86E9002FEBC7 /* CH_Organization_ListTable.m */; };
+		5B89FFC9209D8986002FEBC7 /* CH_OrganizationName_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B89FFC7209D8986002FEBC7 /* CH_OrganizationName_Cell.m */; };
+		5B89FFCA209D8986002FEBC7 /* CH_OrganizationName_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B89FFC8209D8986002FEBC7 /* CH_OrganizationName_Cell.xib */; };
+		5B89FFD0209D9567002FEBC7 /* Carousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B89FFCD209D950A002FEBC7 /* Carousel.m */; };
+		5B89FFD1209D9567002FEBC7 /* CycleImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B89FFCF209D950A002FEBC7 /* CycleImageCell.m */; };
+		5B89FFD5209D9B39002FEBC7 /* CH_Organization_FunctionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B89FFD3209D9B39002FEBC7 /* CH_Organization_FunctionCell.m */; };
+		5B89FFD6209D9B39002FEBC7 /* CH_Organization_FunctionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B89FFD4209D9B39002FEBC7 /* CH_Organization_FunctionCell.xib */; };
+		5B89FFD9209DB1D6002FEBC7 /* SocialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B89FFD8209DB1D6002FEBC7 /* SocialModel.m */; };
 		5B8B13062091A60F00A3B512 /* UIViewController+AlertViewAndActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8B13052091A60F00A3B512 /* UIViewController+AlertViewAndActionSheet.m */; };
 		5B8B13092091AFEC00A3B512 /* CHHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8B13082091AFEC00A3B512 /* CHHTTPManager.m */; };
 		5B8B130E2091CE6700A3B512 /* NSObject+CH.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8B130C2091CE6700A3B512 /* NSObject+CH.m */; };
@@ -141,6 +151,24 @@
 		5B88978C2092FA5A00450351 /* CHWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHWebViewController.m; sourceTree = "<group>"; };
 		5B88978E20931A7200450351 /* CHBaseWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHBaseWebViewController.h; sourceTree = "<group>"; };
 		5B88978F20931A7200450351 /* CHBaseWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHBaseWebViewController.m; sourceTree = "<group>"; };
+		5B89FFBD209D863B002FEBC7 /* CH_Organization_ADPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CH_Organization_ADPlayer.h; sourceTree = "<group>"; };
+		5B89FFBE209D863B002FEBC7 /* CH_Organization_ADPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CH_Organization_ADPlayer.m; sourceTree = "<group>"; };
+		5B89FFC0209D86A5002FEBC7 /* CH_Organization_Function.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CH_Organization_Function.h; sourceTree = "<group>"; };
+		5B89FFC1209D86A5002FEBC7 /* CH_Organization_Function.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CH_Organization_Function.m; sourceTree = "<group>"; };
+		5B89FFC3209D86E9002FEBC7 /* CH_Organization_ListTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CH_Organization_ListTable.h; sourceTree = "<group>"; };
+		5B89FFC4209D86E9002FEBC7 /* CH_Organization_ListTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CH_Organization_ListTable.m; sourceTree = "<group>"; };
+		5B89FFC6209D8986002FEBC7 /* CH_OrganizationName_Cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CH_OrganizationName_Cell.h; sourceTree = "<group>"; };
+		5B89FFC7209D8986002FEBC7 /* CH_OrganizationName_Cell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CH_OrganizationName_Cell.m; sourceTree = "<group>"; };
+		5B89FFC8209D8986002FEBC7 /* CH_OrganizationName_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CH_OrganizationName_Cell.xib; sourceTree = "<group>"; };
+		5B89FFCC209D950A002FEBC7 /* Carousel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Carousel.h; sourceTree = "<group>"; };
+		5B89FFCD209D950A002FEBC7 /* Carousel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Carousel.m; sourceTree = "<group>"; };
+		5B89FFCE209D950A002FEBC7 /* CycleImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CycleImageCell.h; sourceTree = "<group>"; };
+		5B89FFCF209D950A002FEBC7 /* CycleImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CycleImageCell.m; sourceTree = "<group>"; };
+		5B89FFD2209D9B39002FEBC7 /* CH_Organization_FunctionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CH_Organization_FunctionCell.h; sourceTree = "<group>"; };
+		5B89FFD3209D9B39002FEBC7 /* CH_Organization_FunctionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CH_Organization_FunctionCell.m; sourceTree = "<group>"; };
+		5B89FFD4209D9B39002FEBC7 /* CH_Organization_FunctionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CH_Organization_FunctionCell.xib; sourceTree = "<group>"; };
+		5B89FFD7209DB1D6002FEBC7 /* SocialModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocialModel.h; sourceTree = "<group>"; };
+		5B89FFD8209DB1D6002FEBC7 /* SocialModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocialModel.m; sourceTree = "<group>"; };
 		5B8B13042091A60F00A3B512 /* UIViewController+AlertViewAndActionSheet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AlertViewAndActionSheet.h"; sourceTree = "<group>"; };
 		5B8B13052091A60F00A3B512 /* UIViewController+AlertViewAndActionSheet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AlertViewAndActionSheet.m"; sourceTree = "<group>"; };
 		5B8B13072091AFEC00A3B512 /* CHHTTPManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHHTTPManager.h; sourceTree = "<group>"; };
@@ -401,6 +429,7 @@
 		5B72CEC9208EFE3B00CA6490 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				5B89FFCB209D950A002FEBC7 /* CyclePlaying */,
 			);
 			path = ThirdParty;
 			sourceTree = "<group>";
@@ -490,6 +519,8 @@
 			children = (
 				5B8F9366209C7C2400A9DB9C /* CHOrganizationModel.h */,
 				5B8F9367209C7C2400A9DB9C /* CHOrganizationModel.m */,
+				5B89FFD7209DB1D6002FEBC7 /* SocialModel.h */,
+				5B89FFD8209DB1D6002FEBC7 /* SocialModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -497,6 +528,7 @@
 		5B72CEF7208F308B00CA6490 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5B89FFBC209D85E5002FEBC7 /* IndexView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -629,6 +661,36 @@
 				5B88978F20931A7200450351 /* CHBaseWebViewController.m */,
 			);
 			path = WebViewController;
+			sourceTree = "<group>";
+		};
+		5B89FFBC209D85E5002FEBC7 /* IndexView */ = {
+			isa = PBXGroup;
+			children = (
+				5B89FFBD209D863B002FEBC7 /* CH_Organization_ADPlayer.h */,
+				5B89FFBE209D863B002FEBC7 /* CH_Organization_ADPlayer.m */,
+				5B89FFC0209D86A5002FEBC7 /* CH_Organization_Function.h */,
+				5B89FFC1209D86A5002FEBC7 /* CH_Organization_Function.m */,
+				5B89FFC3209D86E9002FEBC7 /* CH_Organization_ListTable.h */,
+				5B89FFC4209D86E9002FEBC7 /* CH_Organization_ListTable.m */,
+				5B89FFC6209D8986002FEBC7 /* CH_OrganizationName_Cell.h */,
+				5B89FFC7209D8986002FEBC7 /* CH_OrganizationName_Cell.m */,
+				5B89FFC8209D8986002FEBC7 /* CH_OrganizationName_Cell.xib */,
+				5B89FFD2209D9B39002FEBC7 /* CH_Organization_FunctionCell.h */,
+				5B89FFD3209D9B39002FEBC7 /* CH_Organization_FunctionCell.m */,
+				5B89FFD4209D9B39002FEBC7 /* CH_Organization_FunctionCell.xib */,
+			);
+			path = IndexView;
+			sourceTree = "<group>";
+		};
+		5B89FFCB209D950A002FEBC7 /* CyclePlaying */ = {
+			isa = PBXGroup;
+			children = (
+				5B89FFCC209D950A002FEBC7 /* Carousel.h */,
+				5B89FFCD209D950A002FEBC7 /* Carousel.m */,
+				5B89FFCE209D950A002FEBC7 /* CycleImageCell.h */,
+				5B89FFCF209D950A002FEBC7 /* CycleImageCell.m */,
+			);
+			path = CyclePlaying;
 			sourceTree = "<group>";
 		};
 		5B8F92EA209C2F3000A9DB9C /* CHTransition */ = {
@@ -1053,7 +1115,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B89FFD6209D9B39002FEBC7 /* CH_Organization_FunctionCell.xib in Resources */,
 				5B8F9348209C5F8C00A9DB9C /* CHSetup.plist in Resources */,
+				5B89FFCA209D8986002FEBC7 /* CH_OrganizationName_Cell.xib in Resources */,
 				5B8F9328209C572D00A9DB9C /* PersonalData.plist in Resources */,
 				5B8F931A209C47E500A9DB9C /* CHUserView.xib in Resources */,
 				5B8F9318209C44AD00A9DB9C /* CHPersonalTableViewCell.xib in Resources */,
@@ -1141,6 +1205,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B89FFD0209D9567002FEBC7 /* Carousel.m in Sources */,
+				5B89FFD1209D9567002FEBC7 /* CycleImageCell.m in Sources */,
 				5B8F9349209C5F9900A9DB9C /* CHSetUpGroup.m in Sources */,
 				5B8F934A209C5F9900A9DB9C /* CHSetUpModel.m in Sources */,
 				5B8F9326209C572700A9DB9C /* CHPersonalData.m in Sources */,
@@ -1152,8 +1218,12 @@
 				5B72CEF0208F2D1B00CA6490 /* UITabBar+CH.m in Sources */,
 				5B72CED6208F03B100CA6490 /* AppDelegate+AppService.m in Sources */,
 				5B72CEA1208EFB2F00CA6490 /* main.m in Sources */,
+				5B89FFD5209D9B39002FEBC7 /* CH_Organization_FunctionCell.m in Sources */,
 				5B8F9356209C66D600A9DB9C /* UILabel+CH.m in Sources */,
+				5B89FFC9209D8986002FEBC7 /* CH_OrganizationName_Cell.m in Sources */,
+				5B89FFBF209D863B002FEBC7 /* CH_Organization_ADPlayer.m in Sources */,
 				5B72CEDC208F051C00CA6490 /* MainTabBarController.m in Sources */,
+				5B89FFD9209DB1D6002FEBC7 /* SocialModel.m in Sources */,
 				5B8F934D209C5FF000A9DB9C /* CHSettingModel.m in Sources */,
 				5B8F931D209C4BAD00A9DB9C /* CHNetString.m in Sources */,
 				5B8B13092091AFEC00A3B512 /* CHHTTPManager.m in Sources */,
@@ -1181,10 +1251,12 @@
 				5B72CF0F208F3BBE00CA6490 /* CHMineViewController.m in Sources */,
 				5B72CF09208F3BA500CA6490 /* CHAddressListViewController.m in Sources */,
 				5B8F9359209C66F000A9DB9C /* UIView+CH.m in Sources */,
+				5B89FFC2209D86A5002FEBC7 /* CH_Organization_Function.m in Sources */,
 				5B72CEE2208F1AB900CA6490 /* CHNavigationController.m in Sources */,
 				5BF98C382091DB1F00C9BD76 /* CHADPageView.m in Sources */,
 				5B8F933C209C5B1A00A9DB9C /* CHServiceViewController.m in Sources */,
 				5B88979020931A7200450351 /* CHBaseWebViewController.m in Sources */,
+				5B89FFC5209D86E9002FEBC7 /* CH_Organization_ListTable.m in Sources */,
 				5B90923D20907D560086911A /* HeaderModel.m in Sources */,
 				5B72CEE5208F22B800CA6490 /* CHRootViewController.m in Sources */,
 				5B90922C209064390086911A /* UserInfo.m in Sources */,

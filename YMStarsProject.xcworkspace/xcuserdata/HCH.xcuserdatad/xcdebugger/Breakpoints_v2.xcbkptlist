@@ -86,7 +86,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YMStarsProject/Manager/UserManager/UserManager.m"
@@ -99,14 +99,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "__45-[UserManager loginToServer:path:completion:]_block_invoke.72"
                   moduleName = "YMStarsProject"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hch/Desktop/YMStarsProject/YMStarsProject/Manager/UserManager/UserManager.m"
-                  timestampString = "547129532.6398391"
+                  timestampString = "547207220.963553"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "67"
@@ -114,14 +114,14 @@
                   offsetFromSymbolStart = "88">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "__45-[UserManager loginToServer:path:completion:]_block_invoke_2"
                   moduleName = "YMStarsProject"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hch/Desktop/YMStarsProject/YMStarsProject/Manager/UserManager/UserManager.m"
-                  timestampString = "547129532.641618"
+                  timestampString = "547207220.964752"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "67"

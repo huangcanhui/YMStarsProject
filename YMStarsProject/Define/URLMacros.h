@@ -65,7 +65,11 @@
 /**
  * 获取指定的机构信息
  */
-#define organ_appoint_Url @"/v1/social/organizations/"
+#define organ_appoint_Url @"/v1/social/organizations"
+/**
+ * 获取机构开通的功能
+ */
+#define organ_function_Url @"/v1/social/social_types"
 
 #pragma mark --------- 工具类 ---------
 /**

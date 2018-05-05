@@ -7,7 +7,16 @@
 //
 
 #import "CHOrganizationModel.h"
+#import <UIKit/UIKit.h>
 
 @implementation CHOrganizationModel
+
+@end
+
+@implementation FunctionObject
+
+@end
+
+@implementation typeObject
 
 @end

@@ -26,6 +26,7 @@
 #import "CHHTTPManager.h"
 #import "NSObject+CH.h"
 #import "AppManager.h"
+#import "UIView+CH.h"
 
 //第三方
 #import <MBProgressHUD.h>
