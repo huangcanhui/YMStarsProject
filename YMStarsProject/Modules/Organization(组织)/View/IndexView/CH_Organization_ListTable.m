@@ -13,6 +13,8 @@
 #import "MJExtension.h"
 
 static NSString *listIdentifier = @"cellIdentifier";
+static NSString *test = @"1月7日，厦门市泉州商会精准扶贫2017年第一次工作会议在安溪县桃舟乡下格村村委会召开。";
+
 @interface CH_Organization_ListTable()<UITableViewDelegate, UITableViewDataSource>
 /**
  * UITableView
@@ -55,59 +57,36 @@ static NSString *listIdentifier = @"cellIdentifier";
     
     tableView.bounces = NO;
     tableView.showsVerticalScrollIndicator = NO;
-    
-    tableView.tableFooterView = [UIView new];
+    self.tableView.tableFooterView = [UIView new];
     
     [self addSubview:tableView];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return 4;
-    } else {
-        return 1;
-    }
+    return 4;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0) {
-        return 40;
-    } else {
-        return [UILabel getHeightByWidth:KScreenWidth - 16 title:self.introduction font:[UIFont systemFontOfSize:16]];
-    }
+     return 40;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return 8;
-    } else {
-        return 41;
-    }
+  return 8;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    if (section == 0) {
-        UIView *view = [[UIView alloc] initWithFrame:self.bounds];
-        view.backgroundColor = [UIColor groupTableViewBackgroundColor];
-        return view;
-    } else {
-        UIView *view = [[UIView alloc] initWithFrame:self.bounds];
-        view.backgroundColor = [UIColor groupTableViewBackgroundColor];
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 1, view.CH_width, 40)];
-        label.backgroundColor = HexColor(0xffffff);
-        label.text = @"   介绍:";
-        [view addSubview:label];
-        return view;
-    }
+    UIView *view = [[UIView alloc] initWithFrame:self.bounds];
+    view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    return view;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -116,35 +95,35 @@ static NSString *listIdentifier = @"cellIdentifier";
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:listIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        if (indexPath.section == 0 && indexPath.row == 0) { //通讯录
+        if (indexPath.row == 0) { //通讯录
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        } else if (indexPath.row == 1) { //地址
+            _accButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 5, 30, 30)];
+            [self.accButton setImage:[UIImage imageNamed:@"Organ_Annotation"] forState:UIControlStateNormal];
+            [_accButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+            cell.accessoryView = self.accButton;
+        } else if (indexPath.row == 3) { //联系方式
+            _accButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 5, 30, 30)];
+            [self.accButton setImage:[UIImage imageNamed:@"Organ_Tel"] forState:UIControlStateNormal];
+            [_accButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+            cell.accessoryView = self.accButton;
         }
     }
-    if (indexPath.section == 0) {
-        CHOrganizationPlistModel *model = self.textArray[indexPath.row];
-        cell.textLabel.text = model.title;
-        if (indexPath.row == 0) {
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"共%@人", self.dataSource[0]];
-        } else {
-            cell.detailTextLabel.text = self.dataSource[indexPath.row];
-        }
+    CHOrganizationPlistModel *model = self.textArray[indexPath.row];
+    cell.textLabel.text = model.title;
+    if (indexPath.row == 0) {
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"共%@人", self.dataSource[0]];
     } else {
-        cell.textLabel.text = self.introduction;
+        cell.detailTextLabel.text = self.dataSource[indexPath.row];
+        cell.detailTextLabel.adjustsFontSizeToFitWidth = YES;
     }
+
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-}
-- (UIButton *)accButton
-{
-    if (!_accButton) {
-        _accButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 5, 30, 30)];
-//        [_accButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _accButton;
 }
 
 - (void)buttonClick:(UIButton *)btn
@@ -171,8 +150,6 @@ static NSString *listIdentifier = @"cellIdentifier";
         _dataSource = [NSArray array];
         NSArray *array = [_object.address componentsSeparatedByString:@"省"];
         _dataSource = @[_object.members_count, array[1], _object.owner.nickname, _object.tel];
-        _introduction = [NSString string];
-        _introduction = _object.introduction;
         [self.tableView reloadData];
     }
 }

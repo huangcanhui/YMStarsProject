@@ -11,6 +11,7 @@
 #import "CHOrganizationModel.h"
 #import "UIImageView+WebCache.h"
 #import "CHNetString.h"
+#import "UIViewController+CH.h"
 
 static NSString *organizationCell = @"organizationCell";
 @interface CHOrganizationListViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -48,11 +49,10 @@ static NSString *organizationCell = @"organizationCell";
     CHOrganizationModel *model = self.array[self.indexpath.section];
     [model.id writeUserDefaultWithKey:KOrganizationID];
     [model.simple_name writeUserDefaultWithKey:KOrganizationName];
-    [self dismissViewControllerAnimated:NO completion:^{
-        if (self.whenClickOrganizationCell) {
-            self.whenClickOrganizationCell();
-        };
-    }];
+    if (self.whenClickOrganizationCell) {
+        self.whenClickOrganizationCell();
+    };
+     [self ch_CloseViewController];
 }
 
 #pragma mark UITableView.delegate

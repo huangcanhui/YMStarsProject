@@ -16,11 +16,15 @@
 #import "CH_Organization_ListTable.h"
 #import "CH_OrganizationName_Cell.h"
 #import "CH_Organization_FunctionCell.h"
+#import "CH_Organization_IntroductionView.h"
 
 #import "CHOrganizationModel.h"
 #import "SocialModel.h"
 #import "CHHTTPManager.h"
 #import "UILabel+CH.h"
+#import "CHBarButtonItem.h"
+#import "KxMenu.h"
+#import "UIViewController+CH.h"
 
 @interface CHOrganizationViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 /**
@@ -46,6 +50,7 @@
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     if ([NSNumber readUserDefaultWithKey:KOrganizationName] != nil) { //即有默认的机构
         self.navigationItem.title = [NSString readUserDefaultWithKey:KOrganizationName];
+        [self initNavigationButton];
         [self initCollectionView];
     } else {
         CHOrganizationListViewController *listVC = [CHOrganizationListViewController new];
@@ -54,6 +59,69 @@
     }
 }
 
+#pragma mark - 添加右上角的点击事件
+- (void)initNavigationButton
+{
+    CHBarButtonItem *addButton = [[CHBarButtonItem alloc] initContainImage:[UIImage imageNamed:@"add"] imageViewFrame:CGRectMake(0, 0, 20, 20) buttonTitle:nil titleColor:nil titleFrame:CGRectZero buttonFrame:CGRectMake(0, 0, 25, 25) target:self action:@selector(showMenu:)];
+    CHBarButtonItem *menuButton = [[CHBarButtonItem alloc] initContainImage:[UIImage imageNamed:@"nav_menu"] imageViewFrame:CGRectMake(0, 0, 20, 20) buttonTitle:nil titleColor:nil titleFrame:CGRectZero buttonFrame:CGRectMake(0, 0, 25, 25) target:self action:@selector(menuButtonClick)];
+    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects:addButton, menuButton, nil]];
+}
+
+#pragma mark 导航栏的点击事件
+- (void)menuButtonClick
+{
+    kWeakSelf(self);
+    CHOrganizationListViewController *listVc = [CHOrganizationListViewController new];
+    listVc.whenClickOrganizationCell = ^{
+        [weakself.collectionView removeFromSuperview];
+        weakself.dataSource = nil;
+        weakself.socialArray = nil;
+        [MBProgressHUD showActivityMessageInWindow:@"加载中..."];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+           self.navigationItem.title = [NSString readUserDefaultWithKey:KOrganizationName];
+            [weakself initCollectionView];
+            [MBProgressHUD hideHUD];
+        });
+    };
+    [self.navigationController pushViewController:listVc animated:NO];
+}
+
+- (void)showMenu:(UIButton *)btn
+{
+    NSArray *memuItems = @[
+                           [KxMenuItem menuItem:@"添加好友" image:[UIImage imageNamed:@"nav_addFriend"] target:self action:@selector(pushAddFriend:)],
+                           [KxMenuItem menuItem:@"扫一扫" image:[UIImage imageNamed:@"nav_Scan"] target:self action:@selector(pushScanCode:)],
+                           [KxMenuItem menuItem:@"我的二维码" image:[UIImage imageNamed:@"nav_ScanCode"] target:self action:@selector(pushMyselfCode:)]
+                           ];
+    
+    UIBarButtonItem *rightbarButton = self.navigationItem.rightBarButtonItem;
+    
+    CGRect targetFrame = rightbarButton.customView.frame;
+    CGFloat offset = [UIApplication sharedApplication].statusBarFrame.size.height > 20 ? 54 : 15;
+    targetFrame.origin.y = targetFrame.origin.y + offset;
+    if (CurrentSystemVersion >= 11.0) {
+        targetFrame.origin.x = self.view.bounds.size.width - targetFrame.size.width - 17;
+    }
+    [KxMenu setTintColor:HexColor(0x000000)];
+    [KxMenu setTitleFont:[UIFont systemFontOfSize:17]];
+    [KxMenu showMenuInView:self.navigationController.navigationBar.superview fromRect:targetFrame menuItems:memuItems];
+}
+
+#pragma mark 弹出层的点击事件
+- (void)pushAddFriend:(id)sender
+{
+    NSLog(@"好友");
+}
+
+- (void)pushScanCode:(id)sender
+{
+    NSLog(@"扫一扫");
+}
+
+- (void)pushMyselfCode:(id)sender
+{
+    NSLog(@"二维码");
+}
 
 #pragma mark - 获取机构的基本信息
 - (NSArray *)dataSource
@@ -118,6 +186,7 @@
     [collectionView registerClass:[CH_Organization_ADPlayer class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:CHOrganizationADPlayerIdentifier];
     [collectionView registerClass:[CH_Organization_Function class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:CHOrganizationFunctionIdentifier];
     [collectionView registerClass:[CH_Organization_ListTable class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:CHOrganizationListTableIdentifier];
+    [collectionView registerClass:[CH_Organization_IntroductionView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:CHOrganizationIntroductionViewIdentifier];
 }
 
 #pragma mark UICollectionView.delegate
@@ -143,6 +212,9 @@
         case 4: //机构的基本信息
             
             break;
+        case 5: //介绍
+            
+            break;
         default:
             break;
     }
@@ -151,7 +223,7 @@
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return 5;
+    return 6;
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
@@ -175,6 +247,8 @@
             return 24;
         case 4: //机构的基本信息
             break;
+        case 5: //介绍
+            break;
         default:
             break;
     }
@@ -197,10 +271,14 @@
         case 3: //介绍、地址等
             return CGSizeMake(self.collectionView.CH_width, 40);
         case 4: //机构的基本信息
-        { CHOrganizationModel *model = self.dataSource[0];
-            return CGSizeMake(self.collectionView.CH_width, 40 * 6 + [UILabel getHeightByWidth:self.collectionView.CH_width - 16 title:model.introduction font:[UIFont systemFontOfSize:16]]);
-            break;
+            return CGSizeMake(self.collectionView.CH_width, 40 * 4);
+        case 5: //介绍
+        {
+            CHOrganizationModel *model = self.dataSource[0];
+            CGFloat H = [UILabel getHeightByWidth:self.collectionView.CH_width - 16 title:model.introduction font:[UIFont systemFontOfSize:16]];
+            return CGSizeMake(self.collectionView.CH_width, H + 30);
         }
+           
         default:
             break;
     }
@@ -238,6 +316,8 @@
         {
             break;
         }
+        case 5:
+            break;
         default:
             break;
     }
@@ -262,6 +342,8 @@
             return UIEdgeInsetsMake(16, 0, 0, 16);
         case 4: //机构的基本信息
             
+            break;
+        case 5:
             break;
         default:
             break;
@@ -309,6 +391,12 @@
                 };
                 return header;
             }
+            case 5:
+            {
+                CH_Organization_IntroductionView *header = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:CHOrganizationIntroductionViewIdentifier forIndexPath:indexPath];
+                header.introduction = model.introduction;
+                return header;
+            }
             default:
                 break;
         }
@@ -354,6 +442,9 @@
         case 4: //机构的基本信息
             
             break;
+        case 5:
+            break;
+            
         default:
             break;
     }
