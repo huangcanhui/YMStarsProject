@@ -20,6 +20,7 @@
 #import "CHOrganizationModel.h"
 #import "SocialModel.h"
 #import "CHHTTPManager.h"
+#import "UILabel+CH.h"
 
 @interface CHOrganizationViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 /**
@@ -42,7 +43,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = HexColor(0xffffff);
+    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     if ([NSNumber readUserDefaultWithKey:KOrganizationName] != nil) { //即有默认的机构
         self.navigationItem.title = [NSString readUserDefaultWithKey:KOrganizationName];
         [self initCollectionView];
@@ -105,8 +106,9 @@
     collectionView.delegate = self;
     collectionView.dataSource = self;
     collectionView.backgroundColor = HexColor(0xffffff);
-    collectionView.contentInset = UIEdgeInsetsMake(0, 0, kTabBarHeight, 0);
+    collectionView.contentInset = UIEdgeInsetsMake(0, 0, kTabBarHeight + kNavBarHeight + kStatusBarHeight, 0);
     self.collectionView = collectionView;
+    collectionView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:collectionView];
     
     //注册cell
@@ -115,7 +117,7 @@
     
     [collectionView registerClass:[CH_Organization_ADPlayer class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:CHOrganizationADPlayerIdentifier];
     [collectionView registerClass:[CH_Organization_Function class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:CHOrganizationFunctionIdentifier];
-//    [collectionView registerClass:[CH_Organization_ListTable class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:CHOrganizationListTableIdentifier];
+    [collectionView registerClass:[CH_Organization_ListTable class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:CHOrganizationListTableIdentifier];
 }
 
 #pragma mark UICollectionView.delegate
@@ -130,10 +132,16 @@
             count = 1;
             break;
         case 2: //功能
-            count = self.dataSource.count;
+        {
+            CHOrganizationModel *model = self.dataSource[0];
+            count = model.functionObjects.count;
             break;
+        }
         case 3: //社交
             count = self.socialArray.count;
+            break;
+        case 4: //机构的基本信息
+            
             break;
         default:
             break;
@@ -143,12 +151,34 @@
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return 4;
+    return 5;
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
     return 8;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+{
+    CGFloat spacing = 0;
+    switch (section) {
+        case 0: //轮播图
+            
+            break;
+        case 1: //标题
+            
+            break;
+        case 2: //功能
+            return 16;
+        case 3: //社交
+            return 24;
+        case 4: //机构的基本信息
+            break;
+        default:
+            break;
+    }
+    return spacing;
 }
 
 /**
@@ -163,10 +193,14 @@
             
             break;
         case 2: //功能
-            return CGSizeMake(self.collectionView.CH_width, 35);
+            return CGSizeMake(self.collectionView.CH_width, 40);
         case 3: //介绍、地址等
-            return CGSizeMake(self.collectionView.CH_width, 35);
-            
+            return CGSizeMake(self.collectionView.CH_width, 40);
+        case 4: //机构的基本信息
+        { CHOrganizationModel *model = self.dataSource[0];
+            return CGSizeMake(self.collectionView.CH_width, 40 * 6 + [UILabel getHeightByWidth:self.collectionView.CH_width - 16 title:model.introduction font:[UIFont systemFontOfSize:16]]);
+            break;
+        }
         default:
             break;
     }
@@ -200,20 +234,49 @@
             CGFloat H = W + 40;
             return CGSizeMake(W, H);
         }
+        case 4: //机构的基本信息
+        {
+            break;
+        }
         default:
             break;
     }
     return CGSizeZero;
 }
 
+/**
+ * 内边距
+ */
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    switch (section) {
+        case 0: //轮播图
+            
+            break;
+        case 1: //名称
+            
+            break;
+        case 2: //功能
+            return UIEdgeInsetsMake(10, 0, 0, 10);
+        case 3: // 社交
+            return UIEdgeInsetsMake(16, 0, 0, 16);
+        case 4: //机构的基本信息
+            
+            break;
+        default:
+            break;
+    }
+    return UIEdgeInsetsZero;
+}
+
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
+    CHOrganizationModel *model = self.dataSource[0];
     if (kind == UICollectionElementKindSectionHeader) {
         switch (indexPath.section) {
             case 0: //封面
             {
                 CH_Organization_ADPlayer *header = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:CHOrganizationADPlayerIdentifier forIndexPath:indexPath];
-                CHOrganizationModel *model = self.dataSource[0];
                 if (model != nil) {
                     header.urls = @[model.cover];
                 }
@@ -235,6 +298,15 @@
             {
                 CH_Organization_Function *header = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:CHOrganizationFunctionIdentifier forIndexPath:indexPath];
                 header.functionName = @"机构社交";
+                return header;
+            }
+            case 4: //机构的基本信息
+            {
+                CH_Organization_ListTable *header = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:CHOrganizationListTableIdentifier forIndexPath:indexPath];
+                header.object = model;
+                header.tableViewClickIndex = ^(NSInteger index) {
+                    NSLog(@"回调");
+                };
                 return header;
             }
             default:
@@ -278,6 +350,9 @@
             }
             return cell;
         }
+            break;
+        case 4: //机构的基本信息
+            
             break;
         default:
             break;

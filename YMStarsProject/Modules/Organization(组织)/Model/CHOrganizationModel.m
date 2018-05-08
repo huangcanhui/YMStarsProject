@@ -20,3 +20,7 @@
 @implementation typeObject
 
 @end
+
+@implementation ownerObject
+
+@end

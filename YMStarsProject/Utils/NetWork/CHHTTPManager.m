@@ -41,7 +41,7 @@
         [self.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
         [self.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", [self getUserAccessToken]] forHTTPHeaderField:@"Authorization"];
         NSNumber *number =[NSNumber readUserDefaultWithKey:KOrganizationID];
-        if (number != nil && [UserManager sharedUserManager].isLogined) { //判断是否有机构ID存在
+        if (number != nil) { //判断是否有机构ID存在
           [self.requestSerializer setValue:[NSString stringWithFormat:@"%@", number] forHTTPHeaderField:@"organizationKey"];
         }
         //设置接收服务器传回的格式

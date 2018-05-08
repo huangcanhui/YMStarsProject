@@ -10,6 +10,7 @@
 
 @class FunctionObject;
 @class typeObject;
+@class ownerObject;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -29,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * 机构成员数量
  */
-@property (nonatomic, strong)NSNumber *memebers_count;
+@property (nonatomic, strong)NSNumber *members_count;
 /**
  * 经度
  */
@@ -78,6 +79,10 @@ NS_ASSUME_NONNULL_BEGIN
  * 机构的类型
  */
 @property (nonatomic, strong)typeObject *type;
+/**
+ * 机构拥有者
+ */
+@property (nonatomic, strong)ownerObject *owner;
 
 @end
 
@@ -128,6 +133,40 @@ NS_ASSUME_NONNULL_BEGIN
  * 图片
  */
 @property (nonatomic, copy)NSString *icon;
+
+@end
+
+#pragma mark - 机构拥有者
+@interface ownerObject :NSObject
+/**
+ * id
+ */
+@property (nonatomic, strong)NSNumber *id;
+/**
+ * 性别
+ */
+@property (nonatomic, copy)NSString *sex;
+/**
+ * 介绍
+ */
+@property (nonatomic, copy)NSString *introduction;
+/**
+ * 名称
+ */
+@property (nonatomic, copy)NSString *nickname;
+/**
+ * 省
+ */
+@property (nonatomic, copy)NSString *province;
+/**
+ * 市
+ */
+@property (nonatomic, copy)NSString *city;
+/**
+ * 头像
+ */
+@property (nonatomic, strong)NSString *avatar;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -40,6 +40,7 @@
 {
     _model = model;
     [_Logo sd_setImageWithURL:[NSURL URLWithString:[CHNetString isValueInNetAddress:_model.icon]] placeholderImage:[UIImage imageNamed:@"logo"]];
+    _Logo.contentMode = UIViewContentModeScaleAspectFit;
     _title.text = _model.name;
 }
 
