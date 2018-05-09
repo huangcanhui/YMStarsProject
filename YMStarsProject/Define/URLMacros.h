@@ -70,6 +70,10 @@
  * 获取机构开通的功能
  */
 #define organ_function_Url @"/v1/social/social_types"
+/**
+ * 获取机构通讯录
+ */
+#define organ_TelList_Url @"/v1/social/organizations"
 
 #pragma mark --------- 工具类 ---------
 /**

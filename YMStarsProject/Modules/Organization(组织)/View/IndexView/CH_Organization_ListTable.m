@@ -12,6 +12,7 @@
 #import "CHOrganizationPlistModel.h"
 #import "MJExtension.h"
 
+
 static NSString *listIdentifier = @"cellIdentifier";
 static NSString *test = @"1月7日，厦门市泉州商会精准扶贫2017年第一次工作会议在安溪县桃舟乡下格村村委会召开。";
 
@@ -123,14 +124,24 @@ static NSString *test = @"1月7日，厦门市泉州商会精准扶贫2017年第
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    if (indexPath.row != 2) { //联系人
+        [self getOrganizationMessage:indexPath];
+    }
 }
 
 - (void)buttonClick:(UIButton *)btn
 {
     UITableViewCell *cell = (UITableViewCell *)btn.superview;
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-    NSLog(@"%@", indexPath);
+    [self getOrganizationMessage:indexPath];
+}
+
+#pragma mark - 获取了点击事件
+- (void)getOrganizationMessage:(NSIndexPath *)indexPath
+{
+    if (self.tableViewClickIndex) {
+        self.tableViewClickIndex(indexPath);
+    }
 }
 
 - (NSArray *)textArray

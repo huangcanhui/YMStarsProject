@@ -10,6 +10,7 @@
 
 #import "CHOrganizationListViewController.h"
 #import "CHNavigationController.h"
+#import "CHAddressListViewController.h"
 
 #import "CH_Organization_ADPlayer.h"
 #import "CH_Organization_Function.h"
@@ -48,7 +49,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    if ([NSNumber readUserDefaultWithKey:KOrganizationName] != nil) { //即有默认的机构
+    if ([NSString readUserDefaultWithKey:KOrganizationName] != nil) { //即有默认的机构
         self.navigationItem.title = [NSString readUserDefaultWithKey:KOrganizationName];
         [self initNavigationButton];
         [self initCollectionView];
@@ -386,8 +387,25 @@
             {
                 CH_Organization_ListTable *header = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:CHOrganizationListTableIdentifier forIndexPath:indexPath];
                 header.object = model;
-                header.tableViewClickIndex = ^(NSInteger index) {
-                    NSLog(@"回调");
+                header.tableViewClickIndex = ^(NSIndexPath *indexPath) {
+                    switch (indexPath.row) {
+                        case 0: //通讯录
+                        {
+                            CHAddressListViewController *addressVC = [CHAddressListViewController new];
+                            [self.navigationController pushViewController:addressVC animated:NO];
+                        }
+                            break;
+                        case 1: //地址
+                            NSLog(@"地址");
+                            break;
+                        case 2:
+                            break;
+                        case 3:
+                            NSLog(@"联系方式");
+                            break;
+                        default:
+                            break;
+                    }
                 };
                 return header;
             }

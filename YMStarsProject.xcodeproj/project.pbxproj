@@ -87,6 +87,9 @@
 		5B90922F2090653C0086911A /* UserToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B90922E2090653C0086911A /* UserToken.m */; };
 		5B90923320906C4F0086911A /* MBProgressHUD+CH.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B90923220906C4F0086911A /* MBProgressHUD+CH.m */; };
 		5B90923D20907D560086911A /* HeaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B90923C20907D560086911A /* HeaderModel.m */; };
+		5BAA497420A30046008258BA /* FirendListObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA497120A3001F008258BA /* FirendListObject.m */; };
+		5BAA497520A30046008258BA /* FriendListGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA497220A3001F008258BA /* FriendListGroup.m */; };
+		5BAA497820A308DD008258BA /* TelephoneCall.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA497720A308DD008258BA /* TelephoneCall.m */; };
 		5BF98C342091CFF300C9BD76 /* CHTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8B130B2091CDF900A3B512 /* CHTime.m */; };
 		5BF98C382091DB1F00C9BD76 /* CHADPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF98C372091DB1F00C9BD76 /* CHADPageView.m */; };
 		5BF98C3B2091E0E800C9BD76 /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF98C3A2091E0E800C9BD76 /* AppManager.m */; };
@@ -275,6 +278,12 @@
 		5B90923220906C4F0086911A /* MBProgressHUD+CH.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+CH.m"; sourceTree = "<group>"; };
 		5B90923B20907D560086911A /* HeaderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderModel.h; sourceTree = "<group>"; };
 		5B90923C20907D560086911A /* HeaderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderModel.m; sourceTree = "<group>"; };
+		5BAA497020A3001F008258BA /* FriendListGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendListGroup.h; sourceTree = "<group>"; };
+		5BAA497120A3001F008258BA /* FirendListObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirendListObject.m; sourceTree = "<group>"; };
+		5BAA497220A3001F008258BA /* FriendListGroup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendListGroup.m; sourceTree = "<group>"; };
+		5BAA497320A3001F008258BA /* FirendListObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirendListObject.h; sourceTree = "<group>"; };
+		5BAA497620A308DD008258BA /* TelephoneCall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TelephoneCall.h; sourceTree = "<group>"; };
+		5BAA497720A308DD008258BA /* TelephoneCall.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TelephoneCall.m; sourceTree = "<group>"; };
 		5BF98C362091DB1F00C9BD76 /* CHADPageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHADPageView.h; sourceTree = "<group>"; };
 		5BF98C372091DB1F00C9BD76 /* CHADPageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHADPageView.m; sourceTree = "<group>"; };
 		5BF98C392091E0E800C9BD76 /* AppManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppManager.h; sourceTree = "<group>"; };
@@ -429,6 +438,8 @@
 				5BF98C352091DAFB00C9BD76 /* ADPage(广告) */,
 				5B90923420907C5C0086911A /* NetWork */,
 				5B90923020906C390086911A /* Category */,
+				5BAA497620A308DD008258BA /* TelephoneCall.h */,
+				5BAA497720A308DD008258BA /* TelephoneCall.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -590,6 +601,10 @@
 		5B72CEFA208F30DF00CA6490 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5BAA497320A3001F008258BA /* FirendListObject.h */,
+				5BAA497120A3001F008258BA /* FirendListObject.m */,
+				5BAA497020A3001F008258BA /* FriendListGroup.h */,
+				5BAA497220A3001F008258BA /* FriendListGroup.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1249,6 +1264,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BAA497420A30046008258BA /* FirendListObject.m in Sources */,
+				5BAA497520A30046008258BA /* FriendListGroup.m in Sources */,
 				5B89FFD0209D9567002FEBC7 /* Carousel.m in Sources */,
 				5B89FFD1209D9567002FEBC7 /* CycleImageCell.m in Sources */,
 				5B8F9349209C5F9900A9DB9C /* CHSetUpGroup.m in Sources */,
@@ -1276,6 +1293,7 @@
 				5B7CEF3A20A198DB0016224A /* UIColor+CH.m in Sources */,
 				5B8B13092091AFEC00A3B512 /* CHHTTPManager.m in Sources */,
 				5B8F933F209C5B3000A9DB9C /* CHAboutUsViewController.m in Sources */,
+				5BAA497820A308DD008258BA /* TelephoneCall.m in Sources */,
 				5B7CEF3420A197960016224A /* CHBarButtonItem.m in Sources */,
 				5B72CEF3208F2EDC00CA6490 /* CHTabBar.m in Sources */,
 				5B90922F2090653C0086911A /* UserToken.m in Sources */,

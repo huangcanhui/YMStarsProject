@@ -20,7 +20,7 @@
 /**
  * 选中的回调
  */
-@property (nonatomic, copy)void (^tableViewClickIndex) (NSInteger index);
+@property (nonatomic, copy)void (^tableViewClickIndex) (NSIndexPath *indexPath);
 
 @end
 
