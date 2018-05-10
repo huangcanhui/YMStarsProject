@@ -114,8 +114,8 @@
             [self POST:url parameters:params progress:nil success:^(NSURLSessionTask *task, NSDictionary * responseObject) {
                 success(responseObject);
             } failure:^(NSURLSessionTask *operation, NSError *error) {
-//                NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
-//                NSInteger statusCode = response.statusCode;
+                NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
+                NSInteger statusCode = response.statusCode;
                 failure(error);
                 [self unifiedErrorCodeToMessageShow:error];
             }];

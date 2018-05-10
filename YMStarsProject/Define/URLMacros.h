@@ -73,7 +73,11 @@
 /**
  * 获取机构通讯录
  */
-#define organ_TelList_Url @"/v1/social/organizations"
+#define organ_TelList_Url @"/v1/member/contacts"
+/**
+ * 获取机构会员
+ */
+#define organ_members_List_Url @"/v1/member/join"
 
 #pragma mark --------- 工具类 ---------
 /**

@@ -50,6 +50,8 @@
 		5B8B13062091A60F00A3B512 /* UIViewController+AlertViewAndActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8B13052091A60F00A3B512 /* UIViewController+AlertViewAndActionSheet.m */; };
 		5B8B13092091AFEC00A3B512 /* CHHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8B13082091AFEC00A3B512 /* CHHTTPManager.m */; };
 		5B8B130E2091CE6700A3B512 /* NSObject+CH.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8B130C2091CE6700A3B512 /* NSObject+CH.m */; };
+		5B8DFBE220A4260F004DE8A3 /* CHAddressDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8DFBE120A4260F004DE8A3 /* CHAddressDetailViewController.m */; };
+		5B8DFBE620A42B7E004DE8A3 /* CH_MemberListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8DFBE520A42B7E004DE8A3 /* CH_MemberListViewController.m */; };
 		5B8F92ED209C2F5600A9DB9C /* CHTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F92EC209C2F5600A9DB9C /* CHTransition.m */; };
 		5B8F9310209C3C7500A9DB9C /* CHUserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F930F209C3C7500A9DB9C /* CHUserView.m */; };
 		5B8F9314209C3D0700A9DB9C /* CHPersonalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F9313209C3D0700A9DB9C /* CHPersonalTableViewCell.m */; };
@@ -206,6 +208,10 @@
 		5B8B130B2091CDF900A3B512 /* CHTime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHTime.m; sourceTree = "<group>"; };
 		5B8B130C2091CE6700A3B512 /* NSObject+CH.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CH.m"; sourceTree = "<group>"; };
 		5B8B130D2091CE6700A3B512 /* NSObject+CH.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+CH.h"; sourceTree = "<group>"; };
+		5B8DFBE020A4260F004DE8A3 /* CHAddressDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHAddressDetailViewController.h; sourceTree = "<group>"; };
+		5B8DFBE120A4260F004DE8A3 /* CHAddressDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHAddressDetailViewController.m; sourceTree = "<group>"; };
+		5B8DFBE420A42B7E004DE8A3 /* CH_MemberListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CH_MemberListViewController.h; sourceTree = "<group>"; };
+		5B8DFBE520A42B7E004DE8A3 /* CH_MemberListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CH_MemberListViewController.m; sourceTree = "<group>"; };
 		5B8F92EB209C2F5600A9DB9C /* CHTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHTransition.h; sourceTree = "<group>"; };
 		5B8F92EC209C2F5600A9DB9C /* CHTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHTransition.m; sourceTree = "<group>"; };
 		5B8F92F4209C324900A9DB9C /* CHTransitionProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHTransitionProtocol.h; sourceTree = "<group>"; };
@@ -549,6 +555,7 @@
 		5B72CEF5208F308B00CA6490 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5B8DFBE320A42B52004DE8A3 /* Function(机构功能) */,
 				5B72CF04208F3B8F00CA6490 /* CHOrganizationViewController.h */,
 				5B72CF05208F3B8F00CA6490 /* CHOrganizationViewController.m */,
 				5B8F9363209C777000A9DB9C /* CHOrganizationListViewController.h */,
@@ -594,6 +601,8 @@
 			children = (
 				5B72CF07208F3BA500CA6490 /* CHAddressListViewController.h */,
 				5B72CF08208F3BA500CA6490 /* CHAddressListViewController.m */,
+				5B8DFBE020A4260F004DE8A3 /* CHAddressDetailViewController.h */,
+				5B8DFBE120A4260F004DE8A3 /* CHAddressDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -743,6 +752,15 @@
 				5B89FFCF209D950A002FEBC7 /* CycleImageCell.m */,
 			);
 			path = CyclePlaying;
+			sourceTree = "<group>";
+		};
+		5B8DFBE320A42B52004DE8A3 /* Function(机构功能) */ = {
+			isa = PBXGroup;
+			children = (
+				5B8DFBE420A42B7E004DE8A3 /* CH_MemberListViewController.h */,
+				5B8DFBE520A42B7E004DE8A3 /* CH_MemberListViewController.m */,
+			);
+			path = "Function(机构功能)";
 			sourceTree = "<group>";
 		};
 		5B8F92EA209C2F3000A9DB9C /* CHTransition */ = {
@@ -1274,6 +1292,7 @@
 				5B8F9327209C572700A9DB9C /* CHPersonalMessage.m in Sources */,
 				5B8F9315209C41E100A9DB9C /* CHPersonalGroup.m in Sources */,
 				5B7CEF4020A19FD70016224A /* UIViewController+CH.m in Sources */,
+				5B8DFBE620A42B7E004DE8A3 /* CH_MemberListViewController.m in Sources */,
 				5B7CEF4320A1A0260016224A /* CHUtils.m in Sources */,
 				5B8F9316209C41E100A9DB9C /* CHPersonalModel.m in Sources */,
 				5BF98C342091CFF300C9BD76 /* CHTime.m in Sources */,
@@ -1319,6 +1338,7 @@
 				5B72CF0F208F3BBE00CA6490 /* CHMineViewController.m in Sources */,
 				5B72CF09208F3BA500CA6490 /* CHAddressListViewController.m in Sources */,
 				5B8F9359209C66F000A9DB9C /* UIView+CH.m in Sources */,
+				5B8DFBE220A4260F004DE8A3 /* CHAddressDetailViewController.m in Sources */,
 				5B89FFC2209D86A5002FEBC7 /* CH_Organization_Function.m in Sources */,
 				5B72CEE2208F1AB900CA6490 /* CHNavigationController.m in Sources */,
 				5BF98C382091DB1F00C9BD76 /* CHADPageView.m in Sources */,

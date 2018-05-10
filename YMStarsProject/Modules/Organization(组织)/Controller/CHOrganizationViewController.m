@@ -11,6 +11,7 @@
 #import "CHOrganizationListViewController.h"
 #import "CHNavigationController.h"
 #import "CHAddressListViewController.h"
+#import "CH_MemberListViewController.h"
 
 #import "CH_Organization_ADPlayer.h"
 #import "CH_Organization_Function.h"
@@ -272,7 +273,7 @@
         case 3: //介绍、地址等
             return CGSizeMake(self.collectionView.CH_width, 40);
         case 4: //机构的基本信息
-            return CGSizeMake(self.collectionView.CH_width, 40 * 4);
+            return CGSizeMake(self.collectionView.CH_width, 40 * 4.2);
         case 5: //介绍
         {
             CHOrganizationModel *model = self.dataSource[0];
@@ -471,7 +472,19 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    if (indexPath.section == 2) { //已开通的机构功能
+        switch (indexPath.row) {
+            case 0: //会员
+            {
+                CH_MemberListViewController *memberVC = [CH_MemberListViewController new];
+                [self.navigationController pushViewController:memberVC animated:NO];
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {

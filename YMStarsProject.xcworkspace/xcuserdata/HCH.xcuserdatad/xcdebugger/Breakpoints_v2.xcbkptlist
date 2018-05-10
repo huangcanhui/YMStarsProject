@@ -6,22 +6,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YMStarsProject/Utils/NetWork/CHHTTPManager.m"
-            timestampString = "547471055.918542"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
-            landmarkName = "-unifiedErrorCodeToMessageShow:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -137,13 +121,29 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YMStarsProject/Modules/Address List(&#x901a;&#x8baf;&#x5f55;)/Controller/CHAddressListViewController.m"
-            timestampString = "547557867.1232409"
+            filePath = "YMStarsProject/Utils/NetWork/CHHTTPManager.m"
+            timestampString = "547631265.148234"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
-            landmarkName = "-dataSource"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "-requestWithMethod:WithPath:WithParams:WithSuccessBlock:WithFailurBlock:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YMStarsProject/Utils/NetWork/CHHTTPManager.m"
+            timestampString = "547631265.148489"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "-requestWithMethod:WithPath:WithParams:WithSuccessBlock:WithFailurBlock:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

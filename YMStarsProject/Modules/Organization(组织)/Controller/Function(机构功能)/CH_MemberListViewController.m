@@ -1,90 +1,38 @@
 //
-//  CHAddressListViewController.m
+//  CH_MemberListViewController.m
 //  YMStarsProject
 //
-//  Created by huangcanhui on 2018/4/24.
+//  Created by huangcanhui on 2018/5/10.
 //  Copyright © 2018年 黄灿辉. All rights reserved.
 //
 
-#import "CHAddressListViewController.h"
+#import "CH_MemberListViewController.h"
 
-#import "CHHTTPManager.h"
 #import "FriendListGroup.h"
 #import "FirendListObject.h"
 #import "MJExtension.h"
-#import "UIImageView+WebCache.h"
-#import "CHNetString.h"
-#import "CHBarButtonItem.h"
-#import "KxMenu.h"
 
-#import "CHAddressDetailViewController.h"
 
-static NSString *cellIdentifier = @"IDENTIFIER";
-@interface CHAddressListViewController ()<UITableViewDelegate, UITableViewDataSource>
+static NSString *cellIdentifier = @"bundleIdentifier";
+@interface CH_MemberListViewController ()<UITableViewDelegate, UITableViewDataSource>
 /**
  * UITableView
  */
 @property (nonatomic, strong)UITableView *tableView;
 /**
- * NSArray
+ * 数据源
  */
 @property (nonatomic, strong)NSArray *dataSource;
 @end
 
-@implementation CHAddressListViewController
+@implementation CH_MemberListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"通讯录";
-    
-    [MBProgressHUD showActivityMessageInView:@"加载中..."];
+    self.navigationItem.title = @"会员";
     
     [self initUI];
-    
-    [self initNavigationButton];
-}
-
-- (void)initNavigationButton
-{
-    CHBarButtonItem *addButton = [[CHBarButtonItem alloc] initContainImage:[UIImage imageNamed:@"add"] imageViewFrame:CGRectMake(0, 0, 20, 20) buttonTitle:nil titleColor:nil titleFrame:CGRectZero buttonFrame:CGRectMake(0, 0, 25, 25) target:self action:@selector(showMenu:)];
-    self.navigationItem.rightBarButtonItem = addButton;
-}
-
-- (void)showMenu:(UIButton *)button
-{
-    NSArray *memuItems = @[
-                           [KxMenuItem menuItem:@"添加好友" image:[UIImage imageNamed:@"nav_addFriend"] target:self action:@selector(pushAddFriend:)],
-                           [KxMenuItem menuItem:@"扫一扫" image:[UIImage imageNamed:@"nav_Scan"] target:self action:@selector(pushScanCode:)],
-                           [KxMenuItem menuItem:@"我的二维码" image:[UIImage imageNamed:@"nav_ScanCode"] target:self action:@selector(pushMyselfCode:)]
-                           ];
-    
-    UIBarButtonItem *rightbarButton = self.navigationItem.rightBarButtonItem;
-    
-    CGRect targetFrame = rightbarButton.customView.frame;
-    CGFloat offset = [UIApplication sharedApplication].statusBarFrame.size.height > 20 ? 54 : 15;
-    targetFrame.origin.y = targetFrame.origin.y + offset;
-    if (CurrentSystemVersion >= 11.0) {
-        targetFrame.origin.x = self.view.bounds.size.width - targetFrame.size.width - 17;
-    }
-    [KxMenu setTintColor:HexColor(0x000000)];
-    [KxMenu setTitleFont:[UIFont systemFontOfSize:17]];
-    [KxMenu showMenuInView:self.navigationController.navigationBar.superview fromRect:targetFrame menuItems:memuItems];
-}
-
-- (void)pushAddFriend:(id)sender
-{
-    
-}
-
-- (void)pushScanCode:(id)sender
-{
-    
-}
-
-- (void)pushMyselfCode:(id)sender
-{
-    
 }
 
 - (void)initUI
@@ -161,23 +109,16 @@ static NSString *cellIdentifier = @"IDENTIFIER";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    FriendListGroup *group = self.dataSource[indexPath.section];
-    FirendListObject *obj = group.list[indexPath.row];
+//    FriendListGroup *group = self.dataSource[indexPath.section];
+//    FirendListObject *obj = group.list[indexPath.row];
     
-    CHAddressDetailViewController *detailVC = [CHAddressDetailViewController new];
-    detailVC.obj = obj;
-    [self.navigationController pushViewController:detailVC animated:NO];
 }
 
 #pragma mark - 懒加载
 - (NSArray *)dataSource
 {
     if (!_dataSource) {
-//        NSString *path = [NSString stringWithFormat:@"%@/%@/contacts", organ_TelList_Url, [NSNumber readUserDefaultWithKey:KOrganizationID]];
-        NSDictionary *params = @{
-                               @"include":@"owner.organizations.type,ranks"
-                               };
-        [[CHHTTPManager manager] requestWithMethod:GET WithPath:organ_TelList_Url WithParams:params WithSuccessBlock:^(NSDictionary *responseObject) {
+        [[CHHTTPManager manager] requestWithMethod:POST WithPath:organ_members_List_Url WithParams:nil WithSuccessBlock:^(NSDictionary *responseObject) {
             [self sortByFirstChar:responseObject[@"data"]];
             [self.tableView reloadData];
             [MBProgressHUD hideHUD];
@@ -223,10 +164,11 @@ static NSString *cellIdentifier = @"IDENTIFIER";
     }];
 }
 
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 @end
