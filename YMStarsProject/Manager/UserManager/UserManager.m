@@ -64,8 +64,7 @@ SINGLETON_FOR_CLASS(UserManager);
         [self loginSuccess:nil completion:block];
     } WithFailurBlock:^(NSError *error) {
          [MBProgressHUD hideHUD];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-           [MBProgressHUD showErrorMessage:@"刷新token错误"];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self logout:nil];
             KPostNotification(KNotificationLoginStateChange, @NO);
         });

@@ -114,8 +114,6 @@
             [self POST:url parameters:params progress:nil success:^(NSURLSessionTask *task, NSDictionary * responseObject) {
                 success(responseObject);
             } failure:^(NSURLSessionTask *operation, NSError *error) {
-                NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
-                NSInteger statusCode = response.statusCode;
                 failure(error);
                 [self unifiedErrorCodeToMessageShow:error];
             }];
@@ -159,10 +157,10 @@
 #pragma mark - 错误的统一处理
 - (void)unifiedErrorCodeToMessageShow:(NSError *)error
 {
-    NSData *data = [[error userInfo][@"com.alamofire.serialization.response.error.string"] dataUsingEncoding:NSUTF8StringEncoding];
-    if (data != nil) {
-        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-        [MBProgressHUD showErrorMessage:dict[@"message"]];
+    NSData *data = [error userInfo][@"com.alamofire.serialization.response.error.data"];
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+    if (dict != nil && ![dict[@"code"] isEqual:@401]) {
+      [MBProgressHUD showErrorMessage:dict[@"message"]];
     }
 }
 
