@@ -14,4 +14,7 @@ pod 'UMCAnalytics'
 pod 'UMCShare/UI'
 pod 'UMCShare/Social/ReducedWeChat'
 pod 'UMCShare/Social/ReducedQQ'
+pod 'AMap3DMap'
+pod 'AMapSearch'
+pod 'AMapLocation'
 end

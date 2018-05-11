@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate+AppService.h"
+
 #import "CHLoginViewController.h"
+#import <AMapFoundationKit/AMapFoundationKit.h>
 
 @implementation AppDelegate(AppService)
 
@@ -55,6 +57,12 @@
     } else { //无缓存的用户数据
         KPostNotification(KNotificationLoginStateChange, @NO);
     }
+}
+
+#pragma mark - 初始化高德地图
+- (void)initAMapKey
+{
+    [AMapServices sharedServices].apiKey = AMAPKey;
 }
 
 #pragma mark - 登录状态处理

@@ -34,6 +34,10 @@
  * 监听网络状态
  */
 - (void)monitorNetworkStatus;
+/**
+ * 初始化高德地图
+ */
+- (void)initAMapKey;
 ///**
 // * 初始化网络配置
 // */

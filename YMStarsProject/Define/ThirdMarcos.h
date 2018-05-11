@@ -12,10 +12,12 @@
 #define ThirdMarcos_h
 
 #pragma mark ----- 友盟 -----
+#define UMengKey @"5a2a34258f4a9d40dd00012e"
 
 #pragma mark ----- 七牛 ------
 
 #pragma mark ----- 高德 ------
+#define AMAPKey @"922c56e577ab4d2f4591162ef47842ba"
 
 #pragma mark ----- 极光 ------
 

@@ -34,6 +34,8 @@
 		5B7CEF4020A19FD70016224A /* UIViewController+CH.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7CEF3F20A19FD70016224A /* UIViewController+CH.m */; };
 		5B7CEF4320A1A0260016224A /* CHUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7CEF4220A1A0260016224A /* CHUtils.m */; };
 		5B7CEF4620A1B3800016224A /* CH_Organization_IntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7CEF4520A1B3800016224A /* CH_Organization_IntroductionView.m */; };
+		5B879AA520A5794700339A01 /* CLLocation+MapLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B879AA420A5794700339A01 /* CLLocation+MapLocation.m */; };
+		5B879AA820A579CD00339A01 /* CHNavigationMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B879AA720A579CD00339A01 /* CHNavigationMapView.m */; };
 		5B88978A2092F7E600450351 /* CHJSHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8897892092F7E600450351 /* CHJSHandler.m */; };
 		5B88978D2092FA5A00450351 /* CHWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B88978C2092FA5A00450351 /* CHWebViewController.m */; };
 		5B88979020931A7200450351 /* CHBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B88978F20931A7200450351 /* CHBaseWebViewController.m */; };
@@ -176,6 +178,10 @@
 		5B7CEF4220A1A0260016224A /* CHUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHUtils.m; sourceTree = "<group>"; };
 		5B7CEF4420A1B3800016224A /* CH_Organization_IntroductionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CH_Organization_IntroductionView.h; sourceTree = "<group>"; };
 		5B7CEF4520A1B3800016224A /* CH_Organization_IntroductionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CH_Organization_IntroductionView.m; sourceTree = "<group>"; };
+		5B879AA320A5794700339A01 /* CLLocation+MapLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CLLocation+MapLocation.h"; sourceTree = "<group>"; };
+		5B879AA420A5794700339A01 /* CLLocation+MapLocation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+MapLocation.m"; sourceTree = "<group>"; };
+		5B879AA620A579CD00339A01 /* CHNavigationMapView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHNavigationMapView.h; sourceTree = "<group>"; };
+		5B879AA720A579CD00339A01 /* CHNavigationMapView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHNavigationMapView.m; sourceTree = "<group>"; };
 		5B8897882092F7E600450351 /* CHJSHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHJSHandler.h; sourceTree = "<group>"; };
 		5B8897892092F7E600450351 /* CHJSHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHJSHandler.m; sourceTree = "<group>"; };
 		5B88978B2092FA5A00450351 /* CHWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHWebViewController.h; sourceTree = "<group>"; };
@@ -424,6 +430,7 @@
 		5B72CEC6208EFDF800CA6490 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5B879AA220A5791F00339A01 /* NavigationMap */,
 				5B7CEF4120A1A0260016224A /* CHUtils.h */,
 				5B7CEF4220A1A0260016224A /* CHUtils.m */,
 				5B7CEF3520A198A30016224A /* KxMenu.h */,
@@ -707,6 +714,17 @@
 				5B8F9319209C47DE00A9DB9C /* CHUserView.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5B879AA220A5791F00339A01 /* NavigationMap */ = {
+			isa = PBXGroup;
+			children = (
+				5B879AA320A5794700339A01 /* CLLocation+MapLocation.h */,
+				5B879AA420A5794700339A01 /* CLLocation+MapLocation.m */,
+				5B879AA620A579CD00339A01 /* CHNavigationMapView.h */,
+				5B879AA720A579CD00339A01 /* CHNavigationMapView.m */,
+			);
+			path = NavigationMap;
 			sourceTree = "<group>";
 		};
 		5B8897872092F7C500450351 /* WebViewController */ = {
@@ -1247,6 +1265,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-YMStarsProject/Pods-YMStarsProject-resources.sh",
+				"${PODS_ROOT}/AMap3DMap/MAMapKit.framework/AMap.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/UMCShare/UMShare/UMSocialSDKPlugin/UMSocialSDKPromptResources.bundle",
 				"${PODS_ROOT}/UMCShare/UMShare/UMSocialUI/UMSocialSDKResources.bundle",
@@ -1299,6 +1318,7 @@
 				5B72CF06208F3B8F00CA6490 /* CHOrganizationViewController.m in Sources */,
 				5B72CEF0208F2D1B00CA6490 /* UITabBar+CH.m in Sources */,
 				5B72CED6208F03B100CA6490 /* AppDelegate+AppService.m in Sources */,
+				5B879AA820A579CD00339A01 /* CHNavigationMapView.m in Sources */,
 				5B7CEF3720A198A40016224A /* KxMenu.m in Sources */,
 				5B72CEA1208EFB2F00CA6490 /* main.m in Sources */,
 				5B89FFD5209D9B39002FEBC7 /* CH_Organization_FunctionCell.m in Sources */,
@@ -1319,6 +1339,7 @@
 				5B72CE93208EFB2F00CA6490 /* AppDelegate.m in Sources */,
 				5B72CF0C208F3BB400CA6490 /* CHIMListViewController.m in Sources */,
 				5BF98C3B2091E0E800C9BD76 /* AppManager.m in Sources */,
+				5B879AA520A5794700339A01 /* CLLocation+MapLocation.m in Sources */,
 				5B8F935F209C68E700A9DB9C /* CHSaveCache.m in Sources */,
 				5B8F9368209C7C2400A9DB9C /* CHOrganizationModel.m in Sources */,
 				5B8B130E2091CE6700A3B512 /* NSObject+CH.m in Sources */,
@@ -1526,7 +1547,7 @@
 				INFOPLIST_FILE = "YMStarsProject/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "-------------.YMStarsProject";
+				PRODUCT_BUNDLE_IDENTIFIER = "YMS-MK-IPH";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/YMStarsProject/Define $(SRCROOT)/YMStarsProject/Utils/CHTransition $(PODS_ROOT)/**";
@@ -1544,7 +1565,7 @@
 				INFOPLIST_FILE = "YMStarsProject/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "-------------.YMStarsProject";
+				PRODUCT_BUNDLE_IDENTIFIER = "YMS-MK-IPH";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/YMStarsProject/Define $(SRCROOT)/YMStarsProject/Utils/CHTransition $(PODS_ROOT)/**";

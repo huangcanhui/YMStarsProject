@@ -27,6 +27,7 @@
 #import "CHBarButtonItem.h"
 #import "KxMenu.h"
 #import "UIViewController+CH.h"
+#import "CHNavigationMapView.h"
 
 @interface CHOrganizationViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 /**
@@ -42,6 +43,10 @@
  */
 @property (nonatomic, strong)NSArray *dataSource;//开通的功能
 @property (nonatomic, strong)NSArray *socialArray; //社交
+/**
+ * 导航
+ */
+@property (nonatomic, strong)CHNavigationMapView *navigationView;
 
 @end
 
@@ -397,7 +402,10 @@
                         }
                             break;
                         case 1: //地址
-                            NSLog(@"地址");
+                        {
+                            [self.navigationView showMapNavigationViewWithtargetLatitude:model.lat.doubleValue targetLongitute:model.lng.doubleValue toName:model.address];
+                            [self.view addSubview:self.navigationView];
+                        }
                             break;
                         case 2:
                             break;
@@ -485,6 +493,14 @@
                 break;
         }
     }
+}
+
+- (CHNavigationMapView *)navigationView
+{
+    if (!_navigationView) {
+        _navigationView = [CHNavigationMapView new];
+    }
+    return _navigationView;
 }
 
 - (void)didReceiveMemoryWarning {
