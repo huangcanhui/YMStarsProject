@@ -20,6 +20,10 @@
 	<string>2</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+        <string>iosamap</string>
+        <string>qqmap</string>
+        <string>comgooglemaps</string>
+        <string>baidumap</string>
 		<string>wechat</string>
 		<string>weixin</string>
 		<string>mqqapi</string>

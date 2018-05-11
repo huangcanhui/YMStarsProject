@@ -62,6 +62,10 @@
     } else {
         CHOrganizationListViewController *listVC = [CHOrganizationListViewController new];
         CHNavigationController *naVC= [[CHNavigationController alloc] initWithRootViewController:listVC];
+        listVC.whenClickOrganizationCell = ^{
+            [self initNavigationButton];
+            [self initCollectionView];
+        };
         [self presentViewController:naVC animated:NO completion:nil];
     }
 }
