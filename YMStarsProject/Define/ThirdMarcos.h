@@ -22,4 +22,9 @@
 #pragma mark ----- 极光 ------
 
 #pragma mark ----- 融云 ------
+#ifdef DEBUG
+#define RCloudKey @"8luwapkv8jjil"
+#else
+#define RCloundKey @""
+#endif
 #endif /* ThirdMarcos_h */

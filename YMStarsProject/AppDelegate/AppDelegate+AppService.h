@@ -38,6 +38,10 @@
  * 初始化高德地图
  */
 - (void)initAMapKey;
+/**
+ * 初始化融云
+ */
+- (void)initRCloudSDK;
 ///**
 // * 初始化网络配置
 // */

@@ -140,6 +140,19 @@
     }];
 }
 
+#pragma mark - 初始化融云服务
+- (void)initRCloudSDK
+{
+    [[IMManager sharedIMManager] initIM];
+    [[IMManager sharedIMManager] loginIMCompletion:^(BOOL isSuccess, NSString *des) {
+        if (isSuccess) { //登录成功
+            NSLog(@"%@", des);
+        } else {//登录失败
+            NSLog(@"%@", des);
+        }
+    }];
+}
+
 #pragma mark - 初始化网络配置
 //- (void)NetWorkConfig
 //{

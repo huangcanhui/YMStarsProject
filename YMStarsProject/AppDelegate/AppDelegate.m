@@ -29,6 +29,9 @@
     //网络监听
     [self monitorNetworkStatus];
     
+    //融云SDK
+    [self initRCloudSDK];
+    
 //    //启动广告页面
 //    [AppManager appStart];
     

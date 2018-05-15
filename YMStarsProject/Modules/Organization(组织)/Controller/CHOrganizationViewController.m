@@ -28,6 +28,7 @@
 #import "KxMenu.h"
 #import "UIViewController+CH.h"
 #import "CHNavigationMapView.h"
+#import "MJRefresh.h"
 
 @interface CHOrganizationViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 /**
@@ -185,6 +186,11 @@
     collectionView.delegate = self;
     collectionView.dataSource = self;
     collectionView.backgroundColor = HexColor(0xffffff);
+   //添加加载控件
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshing)];
+    header.automaticallyChangeAlpha = YES;
+    collectionView.mj_header = header;
+    
     collectionView.contentInset = UIEdgeInsetsMake(0, 0, kTabBarHeight + kNavBarHeight + kStatusBarHeight, 0);
     self.collectionView = collectionView;
     collectionView.showsVerticalScrollIndicator = NO;
@@ -198,6 +204,12 @@
     [collectionView registerClass:[CH_Organization_Function class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:CHOrganizationFunctionIdentifier];
     [collectionView registerClass:[CH_Organization_ListTable class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:CHOrganizationListTableIdentifier];
     [collectionView registerClass:[CH_Organization_IntroductionView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:CHOrganizationIntroductionViewIdentifier];
+}
+
+#pragma mark -下拉刷新控件
+- (void)headerRefreshing
+{
+    [self initCollectionView];
 }
 
 #pragma mark UICollectionView.delegate

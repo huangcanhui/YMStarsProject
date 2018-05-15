@@ -27,6 +27,7 @@
 #import "NSObject+CH.h"
 #import "AppManager.h"
 #import "UIView+CH.h"
+#import "IMManager.h"
 
 //第三方
 #import <MBProgressHUD.h>

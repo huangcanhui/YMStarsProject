@@ -84,5 +84,9 @@
  * 获取七牛token
  */
 #define tool_qiniu_token_Url @"/v1/tool/qiniu-token"
+/**
+ * 获取融云token
+ */
+#define tool_RCloud_token_Url @"/v1/social/im/token"
 
 #endif /* URLMacros_h */

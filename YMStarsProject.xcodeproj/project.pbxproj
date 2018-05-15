@@ -52,6 +52,8 @@
 		5B8B13062091A60F00A3B512 /* UIViewController+AlertViewAndActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8B13052091A60F00A3B512 /* UIViewController+AlertViewAndActionSheet.m */; };
 		5B8B13092091AFEC00A3B512 /* CHHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8B13082091AFEC00A3B512 /* CHHTTPManager.m */; };
 		5B8B130E2091CE6700A3B512 /* NSObject+CH.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8B130C2091CE6700A3B512 /* NSObject+CH.m */; };
+		5B8CF67C20AABA8A009BA503 /* IMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8CF67B20AABA8A009BA503 /* IMManager.m */; };
+		5B8CF68220AABF1F009BA503 /* RCDRCIMDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8CF68120AABF1F009BA503 /* RCDRCIMDataSource.m */; };
 		5B8DFBE220A4260F004DE8A3 /* CHAddressDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8DFBE120A4260F004DE8A3 /* CHAddressDetailViewController.m */; };
 		5B8DFBE620A42B7E004DE8A3 /* CH_MemberListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8DFBE520A42B7E004DE8A3 /* CH_MemberListViewController.m */; };
 		5B8F92ED209C2F5600A9DB9C /* CHTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F92EC209C2F5600A9DB9C /* CHTransition.m */; };
@@ -214,6 +216,10 @@
 		5B8B130B2091CDF900A3B512 /* CHTime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHTime.m; sourceTree = "<group>"; };
 		5B8B130C2091CE6700A3B512 /* NSObject+CH.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CH.m"; sourceTree = "<group>"; };
 		5B8B130D2091CE6700A3B512 /* NSObject+CH.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+CH.h"; sourceTree = "<group>"; };
+		5B8CF67A20AABA8A009BA503 /* IMManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMManager.h; sourceTree = "<group>"; };
+		5B8CF67B20AABA8A009BA503 /* IMManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IMManager.m; sourceTree = "<group>"; };
+		5B8CF68020AABF1F009BA503 /* RCDRCIMDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCDRCIMDataSource.h; sourceTree = "<group>"; };
+		5B8CF68120AABF1F009BA503 /* RCDRCIMDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCDRCIMDataSource.m; sourceTree = "<group>"; };
 		5B8DFBE020A4260F004DE8A3 /* CHAddressDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHAddressDetailViewController.h; sourceTree = "<group>"; };
 		5B8DFBE120A4260F004DE8A3 /* CHAddressDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHAddressDetailViewController.m; sourceTree = "<group>"; };
 		5B8DFBE420A42B7E004DE8A3 /* CH_MemberListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CH_MemberListViewController.h; sourceTree = "<group>"; };
@@ -423,6 +429,8 @@
 				5BF98C3A2091E0E800C9BD76 /* AppManager.m */,
 				5B8F9360209C6C9A00A9DB9C /* CHShareManager.h */,
 				5B8F9361209C6C9A00A9DB9C /* CHShareManager.m */,
+				5B8CF67A20AABA8A009BA503 /* IMManager.h */,
+				5B8CF67B20AABA8A009BA503 /* IMManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -654,6 +662,8 @@
 		5B72CEFE208F30FF00CA6490 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5B8CF68020AABF1F009BA503 /* RCDRCIMDataSource.h */,
+				5B8CF68120AABF1F009BA503 /* RCDRCIMDataSource.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1333,6 +1343,7 @@
 				5B72CEDC208F051C00CA6490 /* MainTabBarController.m in Sources */,
 				5B89FFD9209DB1D6002FEBC7 /* SocialModel.m in Sources */,
 				5B8F934D209C5FF000A9DB9C /* CHSettingModel.m in Sources */,
+				5B8CF68220AABF1F009BA503 /* RCDRCIMDataSource.m in Sources */,
 				5B8F931D209C4BAD00A9DB9C /* CHNetString.m in Sources */,
 				5B7CEF3A20A198DB0016224A /* UIColor+CH.m in Sources */,
 				5B8B13092091AFEC00A3B512 /* CHHTTPManager.m in Sources */,
@@ -1343,6 +1354,7 @@
 				5B90922F2090653C0086911A /* UserToken.m in Sources */,
 				5B72CE93208EFB2F00CA6490 /* AppDelegate.m in Sources */,
 				5B72CF0C208F3BB400CA6490 /* CHIMListViewController.m in Sources */,
+				5B8CF67C20AABA8A009BA503 /* IMManager.m in Sources */,
 				5BF98C3B2091E0E800C9BD76 /* AppManager.m in Sources */,
 				5B879AA520A5794700339A01 /* CLLocation+MapLocation.m in Sources */,
 				5B8F935F209C68E700A9DB9C /* CHSaveCache.m in Sources */,
