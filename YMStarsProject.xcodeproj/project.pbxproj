@@ -1267,6 +1267,11 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-YMStarsProject/Pods-YMStarsProject-resources.sh",
 				"${PODS_ROOT}/AMap3DMap/MAMapKit.framework/AMap.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RongCloud.bundle",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/en.lproj",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/zh-Hans.lproj",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/Emoji.plist",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RCConfig.plist",
 				"${PODS_ROOT}/UMCShare/UMShare/UMSocialSDKPlugin/UMSocialSDKPromptResources.bundle",
 				"${PODS_ROOT}/UMCShare/UMShare/UMSocialUI/UMSocialSDKResources.bundle",
 			);

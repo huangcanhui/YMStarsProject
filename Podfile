@@ -17,4 +17,6 @@ pod 'UMCShare/Social/ReducedQQ'
 pod 'AMap3DMap'
 pod 'AMapSearch'
 pod 'AMapLocation'
+pod 'RongCloudIM/IMLib'
+pod 'RongCloudIM/IMKit'
 end
