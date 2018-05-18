@@ -74,10 +74,16 @@
  * 获取机构通讯录
  */
 #define organ_TelList_Url @"/v1/member/contacts"
+
+#pragma mark ------------------------- 通讯录相关 ------------------
 /**
- * 获取机构会员
+ * 获取机构成员列表
  */
 #define organ_members_List_Url @"/v1/member/join"
+/**
+ * 获取某个成员的基本信息
+ */
+#define organ_members_detail_Url @"/v1/member/members"
 
 #pragma mark --------- 工具类 ---------
 /**
