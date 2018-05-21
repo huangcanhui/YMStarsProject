@@ -93,6 +93,10 @@
 		5B90922F2090653C0086911A /* UserToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B90922E2090653C0086911A /* UserToken.m */; };
 		5B90923320906C4F0086911A /* MBProgressHUD+CH.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B90923220906C4F0086911A /* MBProgressHUD+CH.m */; };
 		5B90923D20907D560086911A /* HeaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B90923C20907D560086911A /* HeaderModel.m */; };
+		5B9EF3E520B2A00C00979B10 /* CHFriend_HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EF3E320B29FD500979B10 /* CHFriend_HeaderView.m */; };
+		5B9EF3E620B2AC5700979B10 /* CHFriend_HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B9EF3E420B29FD600979B10 /* CHFriend_HeaderView.xib */; };
+		5B9EF3ED20B2B51A00979B10 /* CHSocial_FriendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EF3EC20B2B51A00979B10 /* CHSocial_FriendController.m */; };
+		5B9EF3F020B2CC1900979B10 /* SocialMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9EF3EF20B2CC1900979B10 /* SocialMenuButton.m */; };
 		5BAA497420A30046008258BA /* FirendListObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA497120A3001F008258BA /* FirendListObject.m */; };
 		5BAA497520A30046008258BA /* FriendListGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA497220A3001F008258BA /* FriendListGroup.m */; };
 		5BAA497820A308DD008258BA /* TelephoneCall.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA497720A308DD008258BA /* TelephoneCall.m */; };
@@ -296,6 +300,13 @@
 		5B90923220906C4F0086911A /* MBProgressHUD+CH.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+CH.m"; sourceTree = "<group>"; };
 		5B90923B20907D560086911A /* HeaderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderModel.h; sourceTree = "<group>"; };
 		5B90923C20907D560086911A /* HeaderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderModel.m; sourceTree = "<group>"; };
+		5B9EF3E220B29FD500979B10 /* CHFriend_HeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHFriend_HeaderView.h; sourceTree = "<group>"; };
+		5B9EF3E320B29FD500979B10 /* CHFriend_HeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHFriend_HeaderView.m; sourceTree = "<group>"; };
+		5B9EF3E420B29FD600979B10 /* CHFriend_HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CHFriend_HeaderView.xib; sourceTree = "<group>"; };
+		5B9EF3EB20B2B51A00979B10 /* CHSocial_FriendController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHSocial_FriendController.h; sourceTree = "<group>"; };
+		5B9EF3EC20B2B51A00979B10 /* CHSocial_FriendController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHSocial_FriendController.m; sourceTree = "<group>"; };
+		5B9EF3EE20B2CC1900979B10 /* SocialMenuButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocialMenuButton.h; sourceTree = "<group>"; };
+		5B9EF3EF20B2CC1900979B10 /* SocialMenuButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocialMenuButton.m; sourceTree = "<group>"; };
 		5BAA497020A3001F008258BA /* FriendListGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendListGroup.h; sourceTree = "<group>"; };
 		5BAA497120A3001F008258BA /* FirendListObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirendListObject.m; sourceTree = "<group>"; };
 		5BAA497220A3001F008258BA /* FriendListGroup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendListGroup.m; sourceTree = "<group>"; };
@@ -412,6 +423,7 @@
 		5B72CEC4208EFDCC00CA6490 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				5B9EF3E720B2B44400979B10 /* SoF(社交圈) */,
 				5B72CF00208F311900CA6490 /* Mine(个人) */,
 				5B72CEFC208F30FF00CA6490 /* IM(消息) */,
 				5B72CEF8208F30DF00CA6490 /* Address List(通讯录) */,
@@ -636,6 +648,9 @@
 		5B72CEFB208F30DF00CA6490 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5B9EF3E220B29FD500979B10 /* CHFriend_HeaderView.h */,
+				5B9EF3E320B29FD500979B10 /* CHFriend_HeaderView.m */,
+				5B9EF3E420B29FD600979B10 /* CHFriend_HeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1093,6 +1108,41 @@
 			path = NetWork;
 			sourceTree = "<group>";
 		};
+		5B9EF3E720B2B44400979B10 /* SoF(社交圈) */ = {
+			isa = PBXGroup;
+			children = (
+				5B9EF3E820B2B44400979B10 /* Controller */,
+				5B9EF3E920B2B44400979B10 /* Model */,
+				5B9EF3EA20B2B44400979B10 /* View */,
+			);
+			path = "SoF(社交圈)";
+			sourceTree = "<group>";
+		};
+		5B9EF3E820B2B44400979B10 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5B9EF3EB20B2B51A00979B10 /* CHSocial_FriendController.h */,
+				5B9EF3EC20B2B51A00979B10 /* CHSocial_FriendController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5B9EF3E920B2B44400979B10 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5B9EF3EA20B2B44400979B10 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5B9EF3EE20B2CC1900979B10 /* SocialMenuButton.h */,
+				5B9EF3EF20B2CC1900979B10 /* SocialMenuButton.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		5BF98C352091DAFB00C9BD76 /* ADPage(广告) */ = {
 			isa = PBXGroup;
 			children = (
@@ -1219,6 +1269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B9EF3E620B2AC5700979B10 /* CHFriend_HeaderView.xib in Resources */,
 				5B89FFD6209D9B39002FEBC7 /* CH_Organization_FunctionCell.xib in Resources */,
 				5B8F9348209C5F8C00A9DB9C /* CHSetup.plist in Resources */,
 				5B89FFCA209D8986002FEBC7 /* CH_OrganizationName_Cell.xib in Resources */,
@@ -1316,6 +1367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B9EF3E520B2A00C00979B10 /* CHFriend_HeaderView.m in Sources */,
 				5BAA497420A30046008258BA /* FirendListObject.m in Sources */,
 				5BAA497520A30046008258BA /* FriendListGroup.m in Sources */,
 				5B89FFD0209D9567002FEBC7 /* Carousel.m in Sources */,
@@ -1332,6 +1384,7 @@
 				5BF98C342091CFF300C9BD76 /* CHTime.m in Sources */,
 				5B72CF06208F3B8F00CA6490 /* CHOrganizationViewController.m in Sources */,
 				5B72CEF0208F2D1B00CA6490 /* UITabBar+CH.m in Sources */,
+				5B9EF3ED20B2B51A00979B10 /* CHSocial_FriendController.m in Sources */,
 				5B72CED6208F03B100CA6490 /* AppDelegate+AppService.m in Sources */,
 				5B879AA820A579CD00339A01 /* CHNavigationMapView.m in Sources */,
 				5B7CEF3720A198A40016224A /* KxMenu.m in Sources */,
@@ -1347,6 +1400,7 @@
 				5B8F931D209C4BAD00A9DB9C /* CHNetString.m in Sources */,
 				5B7CEF3A20A198DB0016224A /* UIColor+CH.m in Sources */,
 				5B8B13092091AFEC00A3B512 /* CHHTTPManager.m in Sources */,
+				5B9EF3F020B2CC1900979B10 /* SocialMenuButton.m in Sources */,
 				5B8F933F209C5B3000A9DB9C /* CHAboutUsViewController.m in Sources */,
 				5BAA497820A308DD008258BA /* TelephoneCall.m in Sources */,
 				5B7CEF3420A197960016224A /* CHBarButtonItem.m in Sources */,

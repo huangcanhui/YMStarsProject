@@ -12,6 +12,7 @@
 #import "CHNavigationController.h"
 #import "CHAddressListViewController.h"
 #import "CH_MemberListViewController.h"
+#import "CHSocial_FriendController.h"
 
 #import "CH_Organization_ADPlayer.h"
 #import "CH_Organization_Function.h"
@@ -508,6 +509,10 @@
             default:
                 break;
         }
+    } else if (indexPath.section == 3) { //机构社交部分
+        CHSocial_FriendController *controller = [CHSocial_FriendController new];
+        
+        [self.navigationController pushViewController:controller animated:NO];
     }
 }
 
