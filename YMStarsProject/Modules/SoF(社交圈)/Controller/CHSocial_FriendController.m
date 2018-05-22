@@ -8,6 +8,8 @@
 
 #import "CHSocial_FriendController.h"
 
+#import "PublishSocialViewController.h"
+
 #import "SocialMenuButton.h"
 #import "CHBarButtonItem.h"
 
@@ -86,7 +88,9 @@
 #pragma mark 右上角的点击事件
 - (void)showPublicController:(UIButton *)btn
 {
-    NSLog(@"发布");
+    PublishSocialViewController *publishVC = [PublishSocialViewController new];
+    CHNavigationController *naVC = [[CHNavigationController alloc] initWithRootViewController:publishVC];
+    [self presentViewController:naVC animated:NO completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
