@@ -8,6 +8,10 @@
 
 #import "PublishSocialViewController.h"
 
+#import "SocialNaviLabel.h"
+
+#import "TypeListViewController.h"
+
 @interface PublishSocialViewController ()
 
 @end
@@ -20,7 +24,14 @@
     self.navigationItem.title = @"发布";
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStyleDone target:self action:@selector(backSocialFriendVC)];
+    
+    SocialNaviLabel *label = [[SocialNaviLabel alloc] initWithFrame:CGRectMake(0, 0, 60, 45)];
+    label.title = @"全部";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:label];
 
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectTypeList)];
+    label.userInteractionEnabled = YES;
+    [label addGestureRecognizer:tap];
 }
 
 #pragma mark - 返回按钮的点击事件
@@ -28,6 +39,21 @@
 {
     //在这边要进行判断，如果用户已经进行输入的情况
     [self dismissViewControllerAnimated:NO completion:nil];
+}
+
+#pragma mark 类型转换的点击事件
+- (void)selectTypeList
+{
+    UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+    backView.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.5];
+    [[UIApplication sharedApplication].keyWindow addSubview:backView];
+    
+}
+
+#pragma mark - 发布的点击事件
+- (void)publishCharactor
+{
+    
 }
 
 - (void)didReceiveMemoryWarning {

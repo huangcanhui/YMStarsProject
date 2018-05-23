@@ -12,12 +12,17 @@
 
 #import "SocialMenuButton.h"
 #import "CHBarButtonItem.h"
+#import "SocialModel.h"
 
 @interface CHSocial_FriendController ()
 /**
  * UIScrollView
  */
 @property (nonatomic, strong)UIScrollView *scrollView;
+/**
+ * 分类数组
+ */
+@property (nonatomic, strong)NSArray *categoryArray;
 @end
 
 @implementation CHSocial_FriendController
@@ -26,8 +31,8 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"圈子";
-    
-    self.array = @[@"全部", @"新鲜事", @"活动", @"失物招领", @"遗失登记", @"出行"];
+
+    [self initArray];
     
     [self.view addSubview:self.scrollView];
     
@@ -43,18 +48,29 @@
         _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 50)];
         _scrollView.showsHorizontalScrollIndicator = NO;
         _scrollView.bounces = NO;
-        _scrollView.contentSize = CGSizeMake(kScreenWidth / 3 * self.array.count, 50);
+        _scrollView.contentSize = CGSizeMake(kScreenWidth / 3 * self.categoryArray.count, 50);
         _scrollView.backgroundColor = [UIColor lightGrayColor];
     }
     return _scrollView;
+}
+
+- (void)initArray
+{
+    NSMutableArray *arrayM = [NSMutableArray arrayWithArray:self.array];
+    SocialModel *model = [SocialModel new];
+    model.id = @0;
+    model.name = @"全部";
+    [arrayM insertObject:model atIndex:0];
+    self.categoryArray = [arrayM copy];
 }
 
 #pragma mark - 添加按钮
 - (void)initSocialMenuButton
 {
     CGFloat buttonW = (kScreenWidth - 3) / 3;
-    for (int i = 0; i < self.array.count; i++) {
-        SocialMenuButton *button = [SocialMenuButton buttonwWithFrame:CGRectMake((buttonW + 1) * i, 1, buttonW, 48) type:UIButtonTypeCustom andFont:15 backgroundColor:[UIColor groupTableViewBackgroundColor] selectGroundColor:[UIColor lightTextColor] andTitle:self.array[i] andTitleColor:HexColor(0x000000) selectTitleColor:HexColor(0xffffff) andTmepBlock:^(SocialMenuButton *button) {
+    for (int i = 0; i < self.categoryArray.count; i++) {
+        SocialModel *model = self.categoryArray[i];
+        SocialMenuButton *button = [SocialMenuButton buttonwWithFrame:CGRectMake((buttonW + 1) * i, 1, buttonW, 48) type:UIButtonTypeCustom andFont:15 backgroundColor:[UIColor groupTableViewBackgroundColor] selectGroundColor:[UIColor lightTextColor] andTitle:model.name andTitleColor:HexColor(0x000000) selectTitleColor:HexColor(0xffffff) andTmepBlock:^(SocialMenuButton *button) {
             [self getSocialoOfFriendsListWithTagID:button.tag];
             for (UIView *view in _scrollView.subviews) {
                 if ([view isKindOfClass:[SocialMenuButton class]]) {
@@ -69,12 +85,24 @@
             }
         }];
         button.tag = 100 + i;
-        if (button.tag == 100) { //默认选中
-            button.selected = YES;
-            button.backgroundColor = CNavBgColor;
-            [self getSocialoOfFriendsListWithTagID:button.tag];
+        if (self.ID != nil) {
+            //默认选中
+            if (button.tag - 100 == [self.ID intValue]) {
+                button.selected = YES;
+                button.backgroundColor = CNavBgColor;
+                [self getSocialoOfFriendsListWithTagID:button.tag];
+            }
+        } else {
+            if (button.tag == 100) {
+                button.selected = YES;
+                button.backgroundColor = CNavBgColor;
+                [self getSocialoOfFriendsListWithTagID:button.tag];
+            }
         }
         [self.scrollView addSubview:button];
+    }
+    if ([self.ID intValue] > 2 && self.ID != nil) {
+        [_scrollView setContentOffset:CGPointMake(([self.ID intValue] - 2) * buttonW, 0) animated:YES];
     }
 }
 

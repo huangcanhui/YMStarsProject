@@ -511,7 +511,9 @@
         }
     } else if (indexPath.section == 3) { //机构社交部分
         CHSocial_FriendController *controller = [CHSocial_FriendController new];
-        
+        controller.array = self.socialArray;
+        SocialModel *model = self.socialArray[indexPath.row];
+        controller.ID = model.id;
         [self.navigationController pushViewController:controller animated:NO];
     }
 }

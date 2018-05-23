@@ -21,4 +21,5 @@
  * 回调,传回发布的ID，根据ID进行定位
  */
 @property (nonatomic, copy)void (^ReloadDataAndUI)(NSNumber *ID);
+
 @end
