@@ -48,6 +48,16 @@
     backView.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.5];
     [[UIApplication sharedApplication].keyWindow addSubview:backView];
     
+    TypeListViewController *type = [TypeListViewController new];
+//    type.backPublishVC = ^(SocialModel) {
+//        [backView removeFromSuperview];
+//    };
+    type.backPublishVC = ^(SocialModel *model) {
+        [backView removeFromSuperview];
+    };
+    type.view.frame = CGRectMake(100, 0, KScreenWidth - 100, KScreenHeight);
+    [backView addSubview:type.view];
+    [self addChildViewController:type];
 }
 
 #pragma mark - 发布的点击事件

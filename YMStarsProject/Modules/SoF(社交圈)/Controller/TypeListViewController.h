@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SocialModel.h"
 
 @interface TypeListViewController : UIViewController
 /**
  * NSArray
  */
 @property (nonatomic, strong)NSArray *list;
+/**
+ * 回调
+ */
+@property (nonatomic, copy)void (^backPublishVC)(SocialModel *model);
 @end
